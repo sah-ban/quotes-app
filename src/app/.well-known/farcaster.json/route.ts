@@ -3,9 +3,9 @@ export async function GET() {
 
   const config = {
     accountAssociation: {
-      header: "",
-      payload: "",
-      signature: "",
+      header: "eyJmaWQiOjI2ODQzOCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDIxODA4RUUzMjBlREY2NGMwMTlBNmJiMEY3RTRiRkIzZDYyRjA2RWMifQ",
+      payload: "eyJkb21haW4iOiJxdW90ZXMtbWluaWFwcC52ZXJjZWwuYXBwIn0",
+      signature: "MHg0ZWJhYzRjYTNiN2UwNDNkYTgzMDNlNDk2NzkyNzI2ZDgxZjQwOTkyZGE2ZWJlMmFmNDczYmEzMjhjMmRiZmRjN2M0MDhlMzFkMjUzZWViMzZlYjgzMDcwNTdiMDJhNTcxNzgzMWRjZWU0N2NkM2I4NWNkOGJkYzE2YjYzNzJkNDFj",
     },
     frame: {
       version: "1",
