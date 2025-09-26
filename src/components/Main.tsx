@@ -30,7 +30,7 @@ export default function Main() {
   const cast = async (q: number): Promise<string | undefined> => {
     try {
       const result = await sdk.actions.composeCast({
-        text: "GM",
+        text: `${getTimeGreeting()}`,
         embeds: [`${process.env.NEXT_PUBLIC_URL}?q=${q}`],
       });
 
@@ -73,6 +73,20 @@ export default function Main() {
       setAddMiniappResult(`Error: ${error}`);
     }
   }, []);
+
+  function getTimeGreeting() {
+    const hour = new Date().getHours();
+    
+    if (hour >= 5 && hour < 12) {
+        return "GM";
+    } else if (hour >= 12 && hour < 17) {
+        return "Good Afternoon";
+    } else if (hour >= 17 && hour < 22) {
+        return "Good Evening";
+    } else {
+        return "GN";
+    }
+}
 
   return (
     <div
