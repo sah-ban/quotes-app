@@ -30,7 +30,7 @@ export async function GET(req: Request) {
     const [quoteText, author] = currentQuote.quote.split("\n");
 
     // Load both regular and italic font variants
-    const georgiaRegular = await fetchFont("Georgia.ttf"); // Regular font file
+    const georgiaRegular = await fetchFont("Georgia.TTF"); // Regular font file
     const georgiaItalic = await fetchFont("Georgia-Italic.ttf");   // Italic font file
 
     return new ImageResponse(
