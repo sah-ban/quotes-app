@@ -1,0 +1,2497 @@
+[
+  {
+    "id": 1,
+    "quote": "Indeed, with hardship comes ease.\n- Qur'an",
+    "source": "Surah Ash-Sharh (94:6)"
+  },
+  {
+    "id": 2,
+    "quote": "Allah does not burden a soul beyond that it can bear.\n- Qur'an",
+    "source": "Surah Al-Baqarah (2:286)"
+  },
+  {
+    "id": 3,
+    "quote": "Do not lose hope, nor be sad.\n- Qur'an",
+    "source": "Surah Al-Imran (3:139)"
+  },
+  {
+    "id": 4,
+    "quote": "Whoever relies upon Allah — then He is sufficient for him.\n- Qur'an",
+    "source": "Surah At-Talaq (65:3)"
+  },
+  {
+    "id": 5,
+    "quote": "The strong person is not the one who can wrestle others, but the one who controls himself when angry.\n- Prophet Muhammad ﷺ",
+    "source": "Sahih al-Bukhari"
+  },
+  {
+    "id": 6,
+    "quote": "The most beloved deeds to Allah are those done regularly, even if small.\n- Prophet Muhammad ﷺ",
+    "source": "Sahih al-Bukhari"
+  },
+  {
+    "id": 7,
+    "quote": "The best among you are those who bring the greatest benefit to others.\n- Prophet Muhammad ﷺ",
+    "source": "Reported in Daraqutni (Hasan)"
+  },
+  {
+    "id": 8,
+    "quote": "Charity does not decrease wealth.\n- Prophet Muhammad ﷺ",
+    "source": "Sahih Muslim (Hadith)"
+  },
+  {
+    "id": 9,
+    "quote": "Seek knowledge from the cradle to the grave.\n- Islamic Proverb",
+    "source": "Traditional saying widely quoted"
+  },
+  {
+    "id": 10,
+    "quote": "The journey of a thousand miles begins with a single step.\n- Lao Tzu",
+    "source": "Tao Te Ching"
+  },
+  {
+    "id": 11,
+    "quote": "Knowing yourself is the beginning of all wisdom.\n- Aristotle",
+    "source": "Attributed to Aristotle (various works)"
+  },
+  {
+    "id": 12,
+    "quote": "Patience is bitter, but its fruit is sweet.\n- Jean-Jacques Rousseau",
+    "source": "Emile, or On Education"
+  },
+  {
+    "id": 13,
+    "quote": "Education is the most powerful weapon which you can use to change the world.\n- Nelson Mandela",
+    "source": "Speech/Interviews (widely cited)"
+  },
+  {
+    "id": 14,
+    "quote": "Be kind whenever possible. It is always possible.\n- Dalai Lama",
+    "source": "Various public talks"
+  },
+  {
+    "id": 15,
+    "quote": "Do what is right, not what is easy.\n- Unknown (ethical maximal)",
+    "source": "Commonly cited moral maxim"
+  },
+  {
+    "id": 16,
+    "quote": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.\n- Will Durant (summarizing Aristotle)",
+    "source": "The Story of Philosophy (paraphrase of Aristotle)"
+  },
+  {
+    "id": 17,
+    "quote": "Act as if what you do makes a difference. It does.\n- William James",
+    "source": "The Will to Believe"
+  },
+  {
+    "id": 18,
+    "quote": "Well done is better than well said.\n- Benjamin Franklin",
+    "source": "Poor Richard's Almanack"
+  },
+  {
+    "id": 19,
+    "quote": "Do what you can, with what you have, where you are.\n- Theodore Roosevelt",
+    "source": "Speech (widely quoted)"
+  },
+  {
+    "id": 20,
+    "quote": "Believe you can and you're halfway there.\n- Theodore Roosevelt",
+    "source": "Attributed to Roosevelt (various speeches)"
+  },
+  {
+    "id": 21,
+    "quote": "Start where you are. Use what you have. Do what you can.\n- Arthur Ashe",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 22,
+    "quote": "The only way to do great work is to love what you do.\n- Steve Jobs",
+    "source": "Stanford Commencement Address, 2005"
+  },
+  {
+    "id": 23,
+    "quote": "The best way to find yourself is to lose yourself in the service of others.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 24,
+    "quote": "Injustice anywhere is a threat to justice everywhere.\n- Martin Luther King Jr.",
+    "source": "Letter from Birmingham Jail"
+  },
+  {
+    "id": 25,
+    "quote": "Courage is grace under pressure.\n- Ernest Hemingway",
+    "source": "Attributed (various)"
+  },
+  {
+    "id": 26,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.\n- Winston Churchill",
+    "source": "Speech/quotations"
+  },
+  {
+    "id": 27,
+    "quote": "It always seems impossible until it’s done.\n- Nelson Mandela",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 28,
+    "quote": "What you get by achieving your goals is not as important as what you become by achieving your goals.\n- Zig Ziglar",
+    "source": "See You at the Top"
+  },
+  {
+    "id": 29,
+    "quote": "Be the change that you wish to see in the world.\n- Mahatma Gandhi",
+    "source": "Commonly attributed quote"
+  },
+  {
+    "id": 30,
+    "quote": "You miss 100% of the shots you don't take.\n- Wayne Gretzky",
+    "source": "Interview/quotes"
+  },
+  {
+    "id": 31,
+    "quote": "Happiness depends upon ourselves.\n- Aristotle",
+    "source": "Nicomachean Ethics"
+  },
+  {
+    "id": 32,
+    "quote": "The only limit to our realization of tomorrow will be our doubts of today.\n- Franklin D. Roosevelt",
+    "source": "Public speeches/quotes"
+  },
+  {
+    "id": 33,
+    "quote": "Don't watch the clock; do what it does. Keep going.\n- Sam Levenson",
+    "source": "Books/quotes"
+  },
+  {
+    "id": 34,
+    "quote": "The future belongs to those who believe in the beauty of their dreams.\n- Eleanor Roosevelt",
+    "source": "Public addresses/quotes"
+  },
+  {
+    "id": 35,
+    "quote": "Perseverance is failing 19 times and succeeding the 20th.\n- Julie Andrews",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 36,
+    "quote": "You have power over your mind — not outside events. Realize this, and you will find strength.\n- Marcus Aurelius",
+    "source": "Meditations"
+  },
+  {
+    "id": 37,
+    "quote": "Well begun is half done.\n- Aristotle (traditional attribution)",
+    "source": "Classical proverb/attribution"
+  },
+  {
+    "id": 38,
+    "quote": "The only person you are destined to become is the person you decide to be.\n- Ralph Waldo Emerson",
+    "source": "Essays/lectures"
+  },
+  {
+    "id": 39,
+    "quote": "Do not wait; the time will never be 'just right.' Start where you stand.\n- Napoleon Hill",
+    "source": "Think and Grow Rich"
+  },
+  {
+    "id": 40,
+    "quote": "Small deeds done are better than great deeds planned.\n- Peter Marshall",
+    "source": "Sermons/quoted sayings"
+  },
+  {
+    "id": 41,
+    "quote": "A good head and a good heart are always a formidable combination.\n- Nelson Mandela",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 42,
+    "quote": "Keep your face always toward the sunshine—and shadows will fall behind you.\n- Walt Whitman",
+    "source": "Poems/quotes"
+  },
+  {
+    "id": 43,
+    "quote": "Kindness is a language which the deaf can hear and the blind can see.\n- Mark Twain",
+    "source": "Attributed (various collections)"
+  },
+  {
+    "id": 44,
+    "quote": "He who has health has hope; and he who has hope has everything.\n- Proverb",
+    "source": "Arabic/Traditional proverb"
+  },
+  {
+    "id": 45,
+    "quote": "If you want to go fast, go alone. If you want to go far, go together.\n- African Proverb",
+    "source": "Traditional proverb"
+  },
+  {
+    "id": 46,
+    "quote": "To handle yourself, use your head; to handle others, use your heart.\n- Eleanor Roosevelt",
+    "source": "Public addresses/quotes"
+  },
+  {
+    "id": 47,
+    "quote": "Gratitude turns what we have into enough.\n- Anonymous",
+    "source": "Common proverb/quote"
+  },
+  {
+    "id": 48,
+    "quote": "The best preparation for tomorrow is doing your best today.\n- H. Jackson Brown Jr.",
+    "source": "Life's Little Instruction Book"
+  },
+  {
+    "id": 49,
+    "quote": "An investment in knowledge pays the best interest.\n- Benjamin Franklin",
+    "source": "Attributed sayings"
+  },
+  {
+    "id": 50,
+    "quote": "What lies behind us and what lies before us are tiny matters compared to what lies within us.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 51,
+    "quote": "The more that you read, the more things you will know. The more that you learn, the more places you'll go.\n- Dr. Seuss",
+    "source": "I Can Read With My Eyes Shut!"
+  },
+  {
+    "id": 52,
+    "quote": "The mind is everything. What you think you become.\n- Buddha",
+    "source": "Attributed sayings/teachings"
+  },
+  {
+    "id": 53,
+    "quote": "A pessimist sees the difficulty in every opportunity; an optimist sees the opportunity in every difficulty.\n- Winston Churchill",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 54,
+    "quote": "Difficulties strengthen the mind, as labor does the body.\n- Seneca",
+    "source": "Moral Essays"
+  },
+  {
+    "id": 55,
+    "quote": "You don't have to be great to start, but you have to start to be great.\n- Zig Ziglar",
+    "source": "Motivational books/quotes"
+  },
+  {
+    "id": 56,
+    "quote": "The best time to plant a tree was 20 years ago. The second best time is now.\n- Chinese Proverb",
+    "source": "Traditional proverb"
+  },
+  {
+    "id": 57,
+    "quote": "Dream big and dare to fail.\n- Norman Vaughan",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 58,
+    "quote": "Our greatest glory is not in never falling, but in rising every time we fall.\n- Confucius",
+    "source": "Analects"
+  },
+  {
+    "id": 59,
+    "quote": "Judge a man by his questions rather than his answers.\n- Voltaire",
+    "source": "Attributed sayings"
+  },
+  {
+    "id": 60,
+    "quote": "A good example is the best sermon.\n- Benjamin Franklin",
+    "source": "Poor Richard's Almanack"
+  },
+  {
+    "id": 61,
+    "quote": "No act of kindness, no matter how small, is ever wasted.\n- Aesop",
+    "source": "Fables/attributions"
+  },
+  {
+    "id": 62,
+    "quote": "Honesty is the best policy.\n- Benjamin Franklin",
+    "source": "Proverb/attribution"
+  },
+  {
+    "id": 64,
+    "quote": "Let us always meet each other with smile, for the smile is the beginning of love.\n- Mother Teresa",
+    "source": "Collected quotes"
+  },
+  {
+    "id": 65,
+    "quote": "We make a living by what we get, but we make a life by what we give.\n- Winston Churchill",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 66,
+    "quote": "Happiness is not something ready-made. It comes from your own actions.\n- Dalai Lama",
+    "source": "Teachings/quotes"
+  },
+  {
+    "id": 67,
+    "quote": "The purpose of life is a life of purpose.\n- Robert Byrne",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 68,
+    "quote": "Live as if you were to die tomorrow. Learn as if you were to live forever.\n- Mahatma Gandhi",
+    "source": "Attributed sayings/collected works"
+  },
+  {
+    "id": 69,
+    "quote": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.\n- Roy T. Bennett",
+    "source": "The Light in the Heart (quotes)"
+  },
+  {
+    "id": 70,
+    "quote": "When you arise in the morning think of what a privilege it is to be alive, to think, to enjoy, to love.\n- Marcus Aurelius",
+    "source": "Meditations"
+  },
+  {
+    "id": 71,
+    "quote": "Success usually comes to those who are too busy to be looking for it.\n- Henry David Thoreau",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 72,
+    "quote": "The greatest wealth is to live content with little.\n- Plato",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 73,
+    "quote": "The simplest acts of kindness are by far more powerful than a thousand heads bowing in prayer.\n- Mahatma Gandhi",
+    "source": "Attributed sayings"
+  },
+  {
+    "id": 74,
+    "quote": "Every moment is a fresh beginning.\n- T.S. Eliot",
+    "source": "Poems/quotes"
+  },
+  {
+    "id": 75,
+    "quote": "What counts is not necessarily the size of the dog in the fight—it's the size of the fight in the dog.\n- Mark Twain",
+    "source": "Attributed sayings"
+  },
+  {
+    "id": 76,
+    "quote": "Keep going. Everything you need will come to you at the perfect time.\n- Unknown",
+    "source": "Common inspirational saying"
+  },
+  {
+    "id": 77,
+    "quote": "The secret of getting ahead is getting started.\n- Mark Twain",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 78,
+    "quote": "If opportunity doesn't knock, build a door.\n- Milton Berle",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 79,
+    "quote": "You cannot swim for new horizons until you have courage to lose sight of the shore.\n- William Faulkner",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 80,
+    "quote": "The only thing necessary for the triumph of evil is for good men to do nothing.\n- Edmund Burke",
+    "source": "Attributed to Burke (various writings)"
+  },
+  {
+    "id": 81,
+    "quote": "Make each day your masterpiece.\n- John Wooden",
+    "source": "Coaching quotes/Maxims"
+  },
+  {
+    "id": 82,
+    "quote": "The more you praise and celebrate your life, the more there is in life to celebrate.\n- Oprah Winfrey",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 83,
+    "quote": "A goal without a plan is just a wish.\n- Antoine de Saint-Exupéry",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 84,
+    "quote": "The best bridge between despair and hope is a good night's sleep.\n- E. Joseph Cossman",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 85,
+    "quote": "Work hard in silence, let success make the noise.\n- Frank Ocean",
+    "source": "Popular culture/quotes"
+  },
+  {
+    "id": 86,
+    "quote": "To give anything less than your best is to sacrifice the gift.\n- Steve Prefontaine",
+    "source": "Athlete quotes/tributes"
+  },
+  {
+    "id": 87,
+    "quote": "The measure of who we are is what we do with what we have.\n- Vince Lombardi",
+    "source": "Coaching quotes/Speeches"
+  },
+  {
+    "id": 88,
+    "quote": "The way to get started is to quit talking and begin doing.\n- Walt Disney",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 89,
+    "quote": "There are no shortcuts to any place worth going.\n- Beverly Sills",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 90,
+    "quote": "If you want light to come into your life, stand where it is shining.\n- Guy Finley",
+    "source": "Self-help quotes"
+  },
+  {
+    "id": 91,
+    "quote": "When one door of happiness closes, another opens.\n- Helen Keller",
+    "source": "Autobiographical writings/quotes"
+  },
+  {
+    "id": 92,
+    "quote": "It is never too late to be what you might have been.\n- George Eliot",
+    "source": "Attributed/novels/quotes"
+  },
+  {
+    "id": 93,
+    "quote": "Don't count the days, make the days count.\n- Muhammad Ali",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 94,
+    "quote": "To improve is to change; to be perfect is to change often.\n- Winston Churchill",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 95,
+    "quote": "I am not a product of my circumstances. I am a product of my decisions.\n- Stephen Covey",
+    "source": "The 7 Habits of Highly Effective People"
+  },
+  {
+    "id": 96,
+    "quote": "The real measure of your wealth is how much you'd be worth if you lost all your money.\n- Unknown",
+    "source": "Common proverb"
+  },
+  {
+    "id": 97,
+    "quote": "We can do no great things, only small things with great love.\n- Mother Teresa",
+    "source": "Collected quotes/quotes"
+  },
+  {
+    "id": 98,
+    "quote": "Either you run the day or the day runs you.\n- Jim Rohn",
+    "source": "Motivational talks/quotes"
+  },
+  {
+    "id": 99,
+    "quote": "If you cannot do great things, do small things in a great way.\n- Napoleon Hill",
+    "source": "Think and Grow Rich (popular attribution)"
+  },
+  {
+    "id": 100,
+    "quote": "Live life to the fullest, and focus on the positive.\n- Matt Cameron",
+    "source": "Common inspirational saying"
+  },
+  {
+    "id": 101,
+    "quote": "The best way to predict the future is to invent it.\n- Alan Kay",
+    "source": "Computer Science/quotes"
+  },
+  {
+    "id": 102,
+    "quote": "It's not whether you get knocked down, it's whether you get up.\n- Vince Lombardi",
+    "source": "Coaching quotes/tributes"
+  },
+  {
+    "id": 103,
+    "quote": "Keep your eyes on the stars, and your feet on the ground.\n- Theodore Roosevelt",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 104,
+    "quote": "Life is 10% what happens to us and 90% how we react to it.\n- Charles R. Swindoll",
+    "source": "Inspirational writings/quotes"
+  },
+  {
+    "id": 105,
+    "quote": "We become what we think about.\n- Earl Nightingale",
+    "source": "Motivational talks/quotes"
+  },
+  {
+    "id": 106,
+    "quote": "The only journey is the one within.\n- Rainer Maria Rilke",
+    "source": "Letters to a Young Poet"
+  },
+  {
+    "id": 107,
+    "quote": "Nothing will work unless you do.\n- Maya Angelou",
+    "source": "Collected quotes/interviews"
+  },
+  {
+    "id": 108,
+    "quote": "The secret to getting ahead is getting started.\n- Agatha Christie (often misattributed to Twain)",
+    "source": "Attributions/quotes"
+  },
+  {
+    "id": 109,
+    "quote": "To handle yourself, use your head; to handle others, use your heart.\n- Eleanor Roosevelt",
+    "source": "Public statements/quotes"
+  },
+  {
+    "id": 110,
+    "quote": "Better to light a candle than curse the darkness.\n- Eleanor Roosevelt (paraphrase of proverb)",
+    "source": "Proverb/attribution"
+  },
+  {
+    "id": 111,
+    "quote": "Be not afraid of going slowly, be afraid only of standing still.\n- Chinese Proverb",
+    "source": "Traditional proverb"
+  },
+  {
+    "id": 112,
+    "quote": "A little progress each day adds up to big results.\n- Satya Nani (popularized phrasing)",
+    "source": "Self-help quotations"
+  },
+  {
+    "id": 113,
+    "quote": "The more I know, the more I realize I know nothing.\n- Socrates",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 114,
+    "quote": "Don't wish it were easier. Wish you were better.\n- Jim Rohn",
+    "source": "Motivational talks/quotes"
+  },
+  {
+    "id": 115,
+    "quote": "The greatest mistake you can make in life is continually fearing you will make one.\n- Elbert Hubbard",
+    "source": "Popular quotations"
+  },
+  {
+    "id": 116,
+    "quote": "If you want to achieve greatness stop asking for permission.\n- Anonymous",
+    "source": "Contemporary motivational sayings"
+  },
+  {
+    "id": 117,
+    "quote": "You are never too old to set another goal or to dream a new dream.\n- C.S. Lewis",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 118,
+    "quote": "What we achieve inwardly will change outer reality.\n- Plutarch",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 119,
+    "quote": "Tough times never last but tough people do.\n- Robert H. Schuller",
+    "source": "Motivational books/quotes"
+  },
+  {
+    "id": 120,
+    "quote": "Strive not to be a success, but rather to be of value.\n- Albert Einstein",
+    "source": "Attributed/letters/quotes"
+  },
+  {
+    "id": 121,
+    "quote": "Doubt kills more dreams than failure ever will.\n- Suzy Kassem",
+    "source": "Poetry/quotes"
+  },
+  {
+    "id": 122,
+    "quote": "Don't limit your challenges. Challenge your limits.\n- Anonymous",
+    "source": "Contemporary motivational saying"
+  },
+  {
+    "id": 123,
+    "quote": "The only way to have a friend is to be one.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 124,
+    "quote": "A comfort zone is a beautiful place, but nothing ever grows there.\n- Unknown",
+    "source": "Popular quote"
+  },
+  {
+    "id": 125,
+    "quote": "You do not find the happy life. You make it.\n- Camilla Eyring Kimball",
+    "source": "Inspirational writings"
+  },
+  {
+    "id": 126,
+    "quote": "Challenges are what make life interesting and overcoming them is what makes life meaningful.\n- Joshua J. Marine",
+    "source": "Quotes collections"
+  },
+  {
+    "id": 127,
+    "quote": "To live is the rarest thing in the world. Most people exist, that is all.\n- Oscar Wilde",
+    "source": "The Soul of Man under Socialism"
+  },
+  {
+    "id": 128,
+    "quote": "Do your little bit of good where you are; it's those little bits of good put together that overwhelm the world.\n- Desmond Tutu",
+    "source": "Speeches/quotes"
+  },
+  {
+    "id": 129,
+    "quote": "The greatest discovery of my generation is that a human being can alter his life by altering his attitudes.\n- William James",
+    "source": "Psychology writings/quotes"
+  },
+  {
+    "id": 130,
+    "quote": "We may encounter many defeats but we must not be defeated.\n- Maya Angelou",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 131,
+    "quote": "Motivation is what gets you started. Habit is what keeps you going.\n- Jim Ryun",
+    "source": "Athlete quotes/collections"
+  },
+  {
+    "id": 132,
+    "quote": "Do not go where the path may lead, go instead where there is no path and leave a trail.\n- Ralph Waldo Emerson",
+    "source": "Essays/lectures/quotes"
+  },
+  {
+    "id": 133,
+    "quote": "Try not to become a man of success but rather try to become a man of value.\n- Albert Einstein",
+    "source": "Interviews/letters/quotes"
+  },
+  {
+    "id": 134,
+    "quote": "A hero is someone who has given his or her life to something bigger than oneself.\n- Joseph Campbell",
+    "source": "Myths/lectures/quotes"
+  },
+  {
+    "id": 135,
+    "quote": "What you do makes a difference, and you have to decide what kind of difference you want to make.\n- Jane Goodall",
+    "source": "Speeches/works/quotes"
+  },
+  {
+    "id": 136,
+    "quote": "One child, one teacher, one book, one pen can change the world.\n- Malala Yousafzai",
+    "source": "Nobel Lecture/Speeches"
+  },
+  {
+    "id": 137,
+    "quote": "I have not failed. I've just found 10,000 ways that won't work.\n- Thomas Edison",
+    "source": "Interviews/biographies/quotes"
+  },
+  {
+    "id": 138,
+    "quote": "The harder the conflict, the greater the triumph.\n- George Washington",
+    "source": "Attributed sayings/quotes"
+  },
+  {
+    "id": 139,
+    "quote": "Begin anywhere.\n- John Cage",
+    "source": "Artistic statements/quotes"
+  },
+  {
+    "id": 140,
+    "quote": "Only those who dare to fail greatly can ever achieve greatly.\n- Robert F. Kennedy",
+    "source": "Speeches/quotes"
+  },
+  {
+    "id": 141,
+    "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.\n- Nelson Mandela",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 142,
+    "quote": "Try to be a rainbow in someone's cloud.\n- Maya Angelou",
+    "source": "Poetry/quotes"
+  },
+  {
+    "id": 143,
+    "quote": "Listen with curiosity. Speak with honesty. Act with integrity.\n- Roy T. Bennett",
+    "source": "The Light in the Heart (quotes)"
+  },
+  {
+    "id": 144,
+    "quote": "Be brave to stand for what you believe in even if you stand alone.\n- Unknown",
+    "source": "Common inspirational saying"
+  },
+  {
+    "id": 145,
+    "quote": "Faith is taking the first step even when you don't see the whole staircase.\n- Martin Luther King Jr.",
+    "source": "Sermons/quotes"
+  },
+  {
+    "id": 146,
+    "quote": "Not everything that is faced can be changed, but nothing can be changed until it is faced.\n- James Baldwin",
+    "source": "Essays/lectures/quotes"
+  },
+  {
+    "id": 147,
+    "quote": "A good plan violently executed now is better than a perfect plan executed next week.\n- George S. Patton",
+    "source": "Military quotes/attributions"
+  },
+  {
+    "id": 148,
+    "quote": "If you want to lift yourself up, lift up someone else.\n- Booker T. Washington",
+    "source": "Speeches/quotes"
+  },
+  {
+    "id": 149,
+    "quote": "The more you give, the more comes back. That's the law.\n- Wayne Dyer",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 150,
+    "quote": "Life is about making an impact, not making an income.\n- Kevin Kruse",
+    "source": "Entrepreneurial quotes/collections"
+  },
+  {
+    "id": 151,
+    "quote": "A ship in harbor is safe, but that is not what ships are built for.\n- John A. Shedd",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 152,
+    "quote": "Hold fast to dreams, for if dreams die, life is a broken-winged bird that cannot fly.\n- Langston Hughes",
+    "source": "Poetry/works"
+  },
+  {
+    "id": 153,
+    "quote": "Don't judge each day by the harvest you reap but by the seeds that you plant.\n- Robert Louis Stevenson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 154,
+    "quote": "Live daringly, boldly, fearlessly. Taste the relish to be found in competition — in having put forth the best within you.\n- Henry J. Kaiser",
+    "source": "Quotes collections"
+  },
+  {
+    "id": 155,
+    "quote": "Make your life a mission — not an intermission.\n- Arnold Glasgow",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 156,
+    "quote": "Skill to do comes of doing.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 157,
+    "quote": "Strength does not come from physical capacity. It comes from an indomitable will.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 158,
+    "quote": "The true test of character is how you treat the poor, the powerless, the vulnerable.\n- Unknown",
+    "source": "Ethical teachings/proverbs"
+  },
+  {
+    "id": 159,
+    "quote": "To plant a garden is to believe in tomorrow.\n- Audrey Hepburn",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 160,
+    "quote": "When you light a candle for others, you also brighten your own path.\n- Unknown (inspirational maxim)",
+    "source": "Traditional wisdom"
+  },
+  {
+    "id": 161,
+    "quote": "Happiness is not the absence of problems, it's the ability to deal with them.\n- Steve Maraboli",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 162,
+    "quote": "If you want to make your dreams come true, the first thing you have to do is wake up.\n- J.M. Power",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 163,
+    "quote": "The only person you should try to be better than is the person you were yesterday.\n- Anonymous",
+    "source": "Modern self-improvement sayings"
+  },
+  {
+    "id": 164,
+    "quote": "The best way to cheer yourself up is to try to cheer somebody else up.\n- Mark Twain",
+    "source": "Attributed sayings"
+  },
+  {
+    "id": 165,
+    "quote": "The highest reward for a person's toil is not what they get for it, but what they become by it.\n- John Ruskin",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 166,
+    "quote": "True success is overcoming the fear of being unsuccessful.\n- Paul Sweeney",
+    "source": "Motivational writings"
+  },
+  {
+    "id": 167,
+    "quote": "The beautiful thing about learning is nobody can take it away from you.\n- B.B. King",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 168,
+    "quote": "The more that you give away, the more you get back.\n- Unknown (philosophical maxim)",
+    "source": "Proverb/quotations"
+  },
+  {
+    "id": 169,
+    "quote": "You can't cross the sea merely by standing and staring at the water.\n- Rabindranath Tagore",
+    "source": "Poetry/quotes"
+  },
+  {
+    "id": 170,
+    "quote": "Difficult roads often lead to beautiful destinations.\n- Zig Ziglar",
+    "source": "Motivational quotes"
+  },
+  {
+    "id": 171,
+    "quote": "If you don't like the road you're walking, start paving another one.\n- Dolly Parton",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 172,
+    "quote": "The more I practice, the luckier I get.\n- Gary Player",
+    "source": "Athlete quotes/collections"
+  },
+  {
+    "id": 173,
+    "quote": "If you want others to be happy, practice compassion.\n- Dalai Lama",
+    "source": "Teachings/quotes"
+  },
+  {
+    "id": 174,
+    "quote": "Do not underestimate the power of small consistent actions.\n- Unknown",
+    "source": "Self-help/maxim"
+  },
+  {
+    "id": 175,
+    "quote": "Compassion and tolerance are not a sign of weakness, but a sign of strength.\n- Dalai Lama",
+    "source": "Teachings/quotes"
+  },
+  {
+    "id": 176,
+    "quote": "Perseverance is the hard work you do after you get tired of doing the hard work you already did.\n- Newt Gingrich",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 177,
+    "quote": "Trust yourself. You know more than you think you do.\n- Benjamin Spock",
+    "source": "Parenting/writings/quotes"
+  },
+  {
+    "id": 178,
+    "quote": "Goodness is the only investment that never fails.\n- Henry David Thoreau",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 179,
+    "quote": "Let your faith be bigger than your fear.\n- Unknown (spiritual maxim)",
+    "source": "Inspirational sayings"
+  },
+  {
+    "id": 180,
+    "quote": "You are not a drop in the ocean. You are the entire ocean in a drop.\n- Rumi",
+    "source": "Poetry/Mathnawi (translation)"
+  },
+  {
+    "id": 181,
+    "quote": "Yesterday is history, tomorrow is a mystery, today is a gift — that's why we call it the present.\n- Eleanor Roosevelt",
+    "source": "Popular quotation"
+  },
+  {
+    "id": 182,
+    "quote": "Every strike brings me closer to the next home run.\n- Babe Ruth",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 183,
+    "quote": "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.\n- Winston Churchill",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 184,
+    "quote": "The best revenge is to be unlike him who performed the injury.\n- Marcus Aurelius",
+    "source": "Meditations (Stoic teachings)"
+  },
+  {
+    "id": 185,
+    "quote": "One good thing about music, when it hits you, you feel no pain.\n- Bob Marley",
+    "source": "Song lyrics/interviews (general wisdom)"
+  },
+  {
+    "id": 186,
+    "quote": "The more light you allow within you, the brighter the world you live in will be.\n- Shakti Gawain",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 187,
+    "quote": "The way to right wrongs is to turn the light of truth upon them.\n- Ida B. Wells",
+    "source": "Journalism/activist writings/quotes"
+  },
+  {
+    "id": 188,
+    "quote": "The only real mistake is the one from which we learn nothing.\n- Henry Ford",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 189,
+    "quote": "The best way out is always through.\n- Robert Frost",
+    "source": "Poems/quotes"
+  },
+  {
+    "id": 190,
+    "quote": "Kindness begins with the understanding that we all struggle.\n- Charles Glassman",
+    "source": "Therapeutic writings/quotes"
+  },
+  {
+    "id": 191,
+    "quote": "A positive attitude causes a chain reaction of positive thoughts, events and outcomes.\n- Wade Boggs",
+    "source": "Athlete quotes/collections"
+  },
+  {
+    "id": 192,
+    "quote": "The secret of change is to focus all your energy not on fighting the old, but on building the new.\n- Socrates",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 193,
+    "quote": "You can't help everyone, but everyone can help someone.\n- Ronald Reagan",
+    "source": "Public quotes/attributions"
+  },
+  {
+    "id": 194,
+    "quote": "You are braver than you believe, stronger than you seem, and smarter than you think.\n- A.A. Milne",
+    "source": "Winnie-the-Pooh"
+  },
+  {
+    "id": 195,
+    "quote": "A kind gesture can reach a wound that only compassion can heal.\n- Steve Maraboli",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 196,
+    "quote": "The only person who can pull me down is myself, and I'm not going to let myself pull me down anymore.\n- C. JoyBell C.",
+    "source": "Contemporary inspirational writings"
+  },
+  {
+    "id": 197,
+    "quote": "Be the kind of person others want to be around.\n- Unknown",
+    "source": "Modern social maxim"
+  },
+  {
+    "id": 198,
+    "quote": "Your life does not get better by chance, it gets better by change.\n- Jim Rohn",
+    "source": "Motivational talks/quotes"
+  },
+  {
+    "id": 199,
+    "quote": "There is no greater disability in society than the inability to see a person as more.\n- Robert M. Hensel",
+    "source": "Advocacy quotations"
+  },
+  {
+    "id": 200,
+    "quote": "We rise by lifting others.\n- Robert Ingersoll",
+    "source": "Oratory/quotes"
+  },
+  {
+    "id": 201,
+    "quote": "A friend is someone who gives you total freedom to be yourself.\n- Jim Morrison",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 202,
+    "quote": "If you are going through hell, keep going.\n- Winston Churchill",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 203,
+    "quote": "Only put off until tomorrow what you are willing to die having left undone.\n- Pablo Picasso",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 204,
+    "quote": "No one can make you feel inferior without your consent.\n- Eleanor Roosevelt",
+    "source": "You Learn by Living"
+  },
+  {
+    "id": 205,
+    "quote": "Try to be a little kinder than is necessary.\n- J.M. Barrie",
+    "source": "Literary attributions/quotes"
+  },
+  {
+    "id": 206,
+    "quote": "A journey is best measured in friends, rather than miles.\n- Tim Cahill",
+    "source": "Travel writings/quotes"
+  },
+  {
+    "id": 207,
+    "quote": "What you do today can improve all your tomorrows.\n- Ralph Marston",
+    "source": "Daily motivational writings/quotes"
+  },
+  {
+    "id": 208,
+    "quote": "Be the light that helps others see; it is what gives life its deepest significance.\n- Roy T. Bennett",
+    "source": "The Light in the Heart (quotes)"
+  },
+  {
+    "id": 209,
+    "quote": "True humility is not thinking less of yourself; it is thinking of yourself less.\n- C.S. Lewis",
+    "source": "Christian apologetics/quotes"
+  },
+  {
+    "id": 210,
+    "quote": "The dreamers are the saviors of the world.\n- James Allen",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 211,
+    "quote": "There are two ways of spreading light: to be the candle or the mirror that reflects it.\n- Edith Wharton",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 212,
+    "quote": "Do the best you can until you know better. Then when you know better, do better.\n- Maya Angelou",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 213,
+    "quote": "Never bend your head. Always hold it high. Look the world straight in the eye.\n- Helen Keller",
+    "source": "Autobiography/quotes"
+  },
+  {
+    "id": 214,
+    "quote": "You must be the change you wish to see in the world.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 215,
+    "quote": "A mind that is stretched by a new experience can never go back to its old dimensions.\n- Oliver Wendell Holmes Jr.",
+    "source": "Legal writings/quotes"
+  },
+  {
+    "id": 216,
+    "quote": "Wherever there is a human being, there is an opportunity for a kindness.\n- Seneca",
+    "source": "Stoic teachings/quotes"
+  },
+  {
+    "id": 217,
+    "quote": "The best way to find yourself is to lose yourself in the service of others.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 218,
+    "quote": "How wonderful it is that nobody need wait a single moment before starting to improve the world.\n- Anne Frank",
+    "source": "Diary of a Young Girl"
+  },
+  {
+    "id": 219,
+    "quote": "An ounce of action is worth a ton of theory.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 220,
+    "quote": "To know even one life has breathed easier because you have lived. This is to have succeeded.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 221,
+    "quote": "You can't go back and change the beginning, but you can start where you are and change the ending.\n- C.S. Lewis",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 222,
+    "quote": "People who are crazy enough to think they can change the world are the ones who do.\n- Rob Siltanen",
+    "source": "Advertising/quotes"
+  },
+  {
+    "id": 223,
+    "quote": "The secret to getting things done is to act!\n- Dante Alighieri",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 224,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.\n- Albert Einstein",
+    "source": "Interviews/letters/quotes"
+  },
+  {
+    "id": 225,
+    "quote": "You cannot do a kindness too soon, for you never know how soon it will be too late.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 226,
+    "quote": "Happiness is not by chance, but by choice.\n- Jim Rohn",
+    "source": "Motivational writings"
+  },
+  {
+    "id": 227,
+    "quote": "The best portion of a good man's life is his little, nameless acts of kindness.\n- William Wordsworth",
+    "source": "Poetry/quotes"
+  },
+  {
+    "id": 228,
+    "quote": "The only way to achieve the impossible is to believe it is possible.\n- Charles Kingsleigh (fictional paraphrase)",
+    "source": "Popularized fiction quotes"
+  },
+  {
+    "id": 229,
+    "quote": "Live your beliefs and you can turn the world around.\n- Henry David Thoreau",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 230,
+    "quote": "The best thing to hold onto in life is each other.\n- Audrey Hepburn",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 231,
+    "quote": "True charity is the desire to be useful to others with no thought of recompense.\n- Emanuel Swedenborg",
+    "source": "Spiritual writings/quotes"
+  },
+  {
+    "id": 232,
+    "quote": "Only by giving are you able to receive more than you already have.\n- Jim Rohn",
+    "source": "Motivational writings"
+  },
+  {
+    "id": 233,
+    "quote": "What we do for ourselves dies with us. What we do for others and the world remains and is immortal.\n- Albert Pine",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 234,
+    "quote": "The highest result of education is tolerance.\n- Helen Keller",
+    "source": "Autobiographical writings/quotes"
+  },
+  {
+    "id": 235,
+    "quote": "Even the darkest night will end and the sun will rise.\n- Victor Hugo",
+    "source": "Les Misérables"
+  },
+  {
+    "id": 236,
+    "quote": "You cannot escape the responsibility of tomorrow by evading it today.\n- Abraham Lincoln",
+    "source": "Speeches/attributions"
+  },
+  {
+    "id": 237,
+    "quote": "Do not let what you cannot do interfere with what you can do.\n- John Wooden",
+    "source": "Coaching maxims/quotes"
+  },
+  {
+    "id": 238,
+    "quote": "The greatest good you can do for another is not just to share your riches, but to reveal to him his own.\n- Benjamin Disraeli",
+    "source": "Political writings/quotes"
+  },
+  {
+    "id": 239,
+    "quote": "Good actions give strength to ourselves and inspire good actions in others.\n- Plato",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 240,
+    "quote": "You don't have to see the whole staircase, just take the first step.\n- Martin Luther King Jr.",
+    "source": "Sermons/quotes"
+  },
+  {
+    "id": 241,
+    "quote": "Success is the sum of small efforts repeated day in and day out.\n- Robert Collier",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 242,
+    "quote": "When we do the best we can, we never know what miracle is wrought in our life.\n- Helen Keller",
+    "source": "Autobiography/quotes"
+  },
+  {
+    "id": 243,
+    "quote": "You will face many defeats in life, but never let yourself be defeated.\n- Maya Angelou",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 244,
+    "quote": "The meaning of life is to find your gift. The purpose of life is to give it away.\n- Pablo Picasso",
+    "source": "Artistic attributions/quotes"
+  },
+  {
+    "id": 245,
+    "quote": "Don't judge each day by the harvest you reap but by the seeds that you plant.\n- Robert Louis Stevenson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 246,
+    "quote": "The biggest risk is not taking any risk.\n- Mark Zuckerberg",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 247,
+    "quote": "The value of a man resides in what he gives and not in what he is capable of receiving.\n- Albert Einstein",
+    "source": "Letters/attributions"
+  },
+  {
+    "id": 248,
+    "quote": "All our dreams can come true, if we have the courage to pursue them.\n- Walt Disney",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 249,
+    "quote": "The greatest error of all is to do nothing because you can only do little.\n- Edmund Burke",
+    "source": "Political writings/attributions"
+  },
+  {
+    "id": 250,
+    "quote": "It's not what you look at that matters, it's what you see.\n- Henry David Thoreau",
+    "source": "Walden"
+  },
+  {
+    "id": 251,
+    "quote": "The wise man does not lay up his own treasures. The more he gives to others, the more he has for his own.\n- Lao Tzu",
+    "source": "Tao Te Ching attributions"
+  },
+  {
+    "id": 252,
+    "quote": "To love and be loved is to feel the sun from both sides.\n- David Viscott",
+    "source": "Psychological writings/quotes"
+  },
+  {
+    "id": 253,
+    "quote": "The world is changed by your example, not by your opinion.\n- Paulo Coelho",
+    "source": "Works/quotes"
+  },
+  {
+    "id": 254,
+    "quote": "A life spent making mistakes is not only more honorable but more useful than a life spent doing nothing.\n- George Bernard Shaw",
+    "source": "Plays/essays/quotes"
+  },
+  {
+    "id": 255,
+    "quote": "You must do the things you think you cannot do.\n- Eleanor Roosevelt",
+    "source": "You Learn by Living"
+  },
+  {
+    "id": 256,
+    "quote": "We don't see things as they are, we see them as we are.\n- Anaïs Nin",
+    "source": "Writings/quotes"
+  },
+  {
+    "id": 257,
+    "quote": "The best dreams happen when you're awake.\n- Cherie Gilderbloom",
+    "source": "Contemporary quotes"
+  },
+  {
+    "id": 258,
+    "quote": "When we are no longer able to change a situation, we are challenged to change ourselves.\n- Viktor E. Frankl",
+    "source": "Man's Search for Meaning"
+  },
+  {
+    "id": 259,
+    "quote": "A man who dares to waste one hour of time has not discovered the value of life.\n- Charles Darwin",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 260,
+    "quote": "The greatest discovery is that a person can change his future by changing his attitudes.\n- William James",
+    "source": "Psychological writings/quotes"
+  },
+  {
+    "id": 261,
+    "quote": "To give and not expect return, that is what lies at the heart of love.\n- Oscar Wilde",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 262,
+    "quote": "A candle loses nothing by lighting another candle.\n- James Keller",
+    "source": "Spiritual writings/quotes"
+  },
+  {
+    "id": 263,
+    "quote": "The power of imagination makes us infinite.\n- John Muir",
+    "source": "Nature writings/quotes"
+  },
+  {
+    "id": 264,
+    "quote": "Act as if what you do makes a difference. It does.\n- William James",
+    "source": "The Will to Believe"
+  },
+  {
+    "id": 265,
+    "quote": "The highest form of wisdom is kindness.\n- The Talmud",
+    "source": "Religious ethical teachings"
+  },
+  {
+    "id": 266,
+    "quote": "What you get by achieving your goals is not as important as what you become by achieving your goals.\n- Zig Ziglar",
+    "source": "See You at the Top"
+  },
+  {
+    "id": 267,
+    "quote": "If you want to be happy, set a goal that commands your thoughts, liberates your energy and inspires your hopes.\n- Andrew Carnegie",
+    "source": "Industrialist writings/quotes"
+  },
+  {
+    "id": 268,
+    "quote": "When you do things from your soul, you feel a river moving in you, a joy.\n- Rumi",
+    "source": "Poetry/Mathnawi (translation)"
+  },
+  {
+    "id": 269,
+    "quote": "Nothing is impossible. The word itself says 'I'm possible!'\n- Audrey Hepburn",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 270,
+    "quote": "The mediocre teacher tells. The good teacher explains. The superior teacher demonstrates. The great teacher inspires.\n- William Arthur Ward",
+    "source": "Educational quotes/collections"
+  },
+  {
+    "id": 271,
+    "quote": "The essence of life is to serve others and do good.\n- Aristotle",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 272,
+    "quote": "An effort made for the happiness of others lifts above ourselves.\n- Lydia M. Child",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 273,
+    "quote": "Be faithful in small things because it is in them that your strength lies.\n- Mother Teresa",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 274,
+    "quote": "Keep your face to the sunshine and you cannot see a shadow.\n- Helen Keller",
+    "source": "Autobiographical writings/quotes"
+  },
+  {
+    "id": 275,
+    "quote": "If you want to live a happy life, tie it to a goal, not to people or things.\n- Albert Einstein",
+    "source": "Letters/attributions"
+  },
+  {
+    "id": 276,
+    "quote": "As we work to create light for others we naturally light our own way.\n- Mary Anne Radmacher",
+    "source": "Inspirational writings/quotes"
+  },
+  {
+    "id": 277,
+    "quote": "The most wasted of all days is one without laughter.\n- Nicolas Chamfort",
+    "source": "Writings/attributions"
+  },
+  {
+    "id": 278,
+    "quote": "Without continual growth and progress, such words as improvement, achievement, and success have no meaning.\n- Benjamin Franklin",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 279,
+    "quote": "The purpose of our lives is to be happy.\n- Dalai Lama",
+    "source": "Teachings/quotes"
+  },
+  {
+    "id": 280,
+    "quote": "The only person you are destined to become is the person you decide to be.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 281,
+    "quote": "We make a living by what we get; we make a life by what we give.\n- Winston Churchill",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 282,
+    "quote": "It is during our darkest moments that we must focus to see the light.\n- Aristotle",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 283,
+    "quote": "Do not go where the path may lead, go instead where there is no path and leave a trail.\n- Ralph Waldo Emerson",
+    "source": "Essays/lectures/quotes"
+  },
+  {
+    "id": 284,
+    "quote": "The only limit to our realization of tomorrow will be our doubts of today.\n- Franklin D. Roosevelt",
+    "source": "Public speeches/quotes"
+  },
+  {
+    "id": 285,
+    "quote": "A man who has committed a mistake and doesn't correct it, is committing another mistake.\n- Confucius",
+    "source": "Analects/attributions"
+  },
+  {
+    "id": 286,
+    "quote": "Efforts and courage are not enough without purpose and direction.\n- John F. Kennedy",
+    "source": "Speeches/quotes"
+  },
+  {
+    "id": 287,
+    "quote": "Leave no stone unturned.\n- Euripides",
+    "source": "Classical attributions"
+  },
+  {
+    "id": 288,
+    "quote": "The future depends on what you do today.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 289,
+    "quote": "You cannot truly be happy until you make others happy.\n- Unknown (ethical maxim)",
+    "source": "Popular sayings"
+  },
+  {
+    "id": 290,
+    "quote": "Celebrate what you want to see more of.\n- Tom Peters",
+    "source": "Business writings/quotes"
+  },
+  {
+    "id": 291,
+    "quote": "Keep your dreams alive. Understand to achieve anything requires faith and belief in yourself.\n- Gail Devers",
+    "source": "Athlete interviews/quotes"
+  },
+  {
+    "id": 292,
+    "quote": "The highest achievement is to inspire others.\n- Unknown",
+    "source": "Contemporary motivational sayings"
+  },
+  {
+    "id": 293,
+    "quote": "No one has ever become poor by giving.\n- Anne Frank",
+    "source": "Diary/quotations"
+  },
+  {
+    "id": 294,
+    "quote": "A single act of kindness throws out roots in all directions.\n- Amelia Earhart",
+    "source": "Biographical attributions"
+  },
+  {
+    "id": 295,
+    "quote": "The best inheritance a parent can give to his children is a few minutes of their time each day.\n- M. Grundler",
+    "source": "Parenting sayings/quotes"
+  },
+  {
+    "id": 296,
+    "quote": "The measure of intelligence is the ability to change.\n- Albert Einstein",
+    "source": "Letters/quotes"
+  },
+  {
+    "id": 297,
+    "quote": "When you have a dream, you've got to grab it and never let go.\n- Carol Burnett",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 298,
+    "quote": "It is not what we get. But who we become, what we contribute... that gives meaning to our lives.\n- Tony Robbins",
+    "source": "Motivational writings/quotes"
+  },
+  {
+    "id": 299,
+    "quote": "Believe in yourself and all that you are. Know that there is something inside you greater than any obstacle.\n- Christian D. Larson",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 300,
+    "quote": "The best way to multiply your happiness is to share it with others.\n- Unknown",
+    "source": "Common proverb/quotations"
+  },
+  {
+    "id": 301,
+    "quote": "A gentle answer turns away wrath.\n- Proverbs (biblical paraphrase)",
+    "source": "Biblical proverbs/paraphrase"
+  },
+  {
+    "id": 302,
+    "quote": "The task ahead of you is never as great as the power behind you.\n- Ralph Waldo Emerson",
+    "source": "Essays/attributions"
+  },
+  {
+    "id": 303,
+    "quote": "To know how to suggest is the art of teaching.\n- Luc de Clapiers",
+    "source": "Moral writings/attributions"
+  },
+  {
+    "id": 304,
+    "quote": "Happiness is the real sense of fulfillment that comes from hard work.\n- Joseph Barbara",
+    "source": "Motivational writings"
+  },
+  {
+    "id": 305,
+    "quote": "Be not afraid of greatness.\n- William Shakespeare",
+    "source": "Plays/attributions"
+  },
+  {
+    "id": 306,
+    "quote": "The only person you are destined to become is the person you decide to be.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 307,
+    "quote": "Act, don't react.\n- Unknown",
+    "source": "Contemporary motivational sayings"
+  },
+  {
+    "id": 308,
+    "quote": "Don't let yesterday take up too much of today.\n- Will Rogers",
+    "source": "Humorous sayings/quotes"
+  },
+  {
+    "id": 309,
+    "quote": "The greatest weapon against stress is our ability to choose one thought over another.\n- William James",
+    "source": "Psychological writings/quotes"
+  },
+  {
+    "id": 310,
+    "quote": "If you want to do something, you will find a way. If you don't, you'll find an excuse.\n- Jim Rohn",
+    "source": "Motivational talks/quotes"
+  },
+  {
+    "id": 311,
+    "quote": "Be the reason someone smiles today.\n- Unknown",
+    "source": "Modern inspirational sayings"
+  },
+  {
+    "id": 312,
+    "quote": "A man who has committed a mistake and doesn't correct it, is committing another mistake.\n- Confucius",
+    "source": "Analects/attributions"
+  },
+  {
+    "id": 313,
+    "quote": "The only limit to your impact is your imagination and commitment.\n- Tony Robbins",
+    "source": "Motivational writings/quotes"
+  },
+  {
+    "id": 314,
+    "quote": "Everything you've ever wanted is on the other side of fear.\n- George Addair",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 315,
+    "quote": "You can't cross the sea merely by standing and staring at the water.\n- Rabindranath Tagore",
+    "source": "Poetry/quotes"
+  },
+  {
+    "id": 316,
+    "quote": "Gratitude is not only the greatest of virtues but the parent of all others.\n- Marcus Tullius Cicero",
+    "source": "Classical attributions"
+  },
+  {
+    "id": 317,
+    "quote": "Only in the darkness can you see the stars.\n- Martin Luther King Jr.",
+    "source": "Sermons/quotes"
+  },
+  {
+    "id": 318,
+    "quote": "Make each day your masterpiece.\n- John Wooden",
+    "source": "Coaching maxims/quotes"
+  },
+  {
+    "id": 319,
+    "quote": "If you're offered a seat on a rocket ship, don't ask what seat. Just get on.\n- Sheryl Sandberg",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 320,
+    "quote": "Success isn't about how much money you make; it's about the difference you make in people's lives.\n- Michelle Obama",
+    "source": "Speeches/quotes"
+  },
+  {
+    "id": 321,
+    "quote": "A person who never made a mistake never tried anything new.\n- Albert Einstein",
+    "source": "Letters/attributions"
+  },
+  {
+    "id": 322,
+    "quote": "The best teacher is experience learned from failures.\n- Unknown",
+    "source": "Common wisdom sayings"
+  },
+  {
+    "id": 323,
+    "quote": "If you can't feed a hundred people, then feed just one.\n- Mother Teresa",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 324,
+    "quote": "There is no substitute for hard work.\n- Thomas Edison",
+    "source": "Interviews/biographies/quotes"
+  },
+  {
+    "id": 325,
+    "quote": "The more you give, the more you get — especially when what you give is of yourself.\n- Unknown",
+    "source": "Moral sayings"
+  },
+  {
+    "id": 326,
+    "quote": "To handle yourself, use your head; to handle others, use your heart.\n- Eleanor Roosevelt",
+    "source": "Public statements/quotes"
+  },
+  {
+    "id": 327,
+    "quote": "Act with purpose and you will create progress.\n- Unknown",
+    "source": "Contemporary motivational sayings"
+  },
+  {
+    "id": 328,
+    "quote": "The only way to learn mathematics is to do mathematics.\n- Paul Halmos",
+    "source": "Mathematical writings/quotes"
+  },
+  {
+    "id": 329,
+    "quote": "What we do for ourselves dies with us; what we do for others remains and is immortal.\n- Albert Pine",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 330,
+    "quote": "Tend the roots and the fruit will take care of itself.\n- Unknown (agricultural proverb)",
+    "source": "Proverb/quotations"
+  },
+  {
+    "id": 331,
+    "quote": "When you have a dream, you've got to grab it and never let go.\n- Carol Burnett",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 332,
+    "quote": "You don't build a business - you build people - and then people build the business.\n- Zig Ziglar",
+    "source": "Business quotes/collections"
+  },
+  {
+    "id": 333,
+    "quote": "Work joyfully and peacefully, knowing that right thoughts and right efforts will inevitably bring about right results.\n- James Allen",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 334,
+    "quote": "Don't wait. The time will never be just right.\n- Napoleon Hill",
+    "source": "Think and Grow Rich (popularization)"
+  },
+  {
+    "id": 335,
+    "quote": "Be kind, for everyone you meet is fighting a harder battle.\n- Plato (paraphrase of ancient wisdom)",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 336,
+    "quote": "The greatest glory stems from daring to be different.\n- Unknown",
+    "source": "Contemporary inspirational sayings"
+  },
+  {
+    "id": 337,
+    "quote": "A loving heart is the truest wisdom.\n- Charles Dickens",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 338,
+    "quote": "Nothing great was ever achieved without enthusiasm.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 339,
+    "quote": "The road to success and the road to failure are almost exactly the same.\n- Colin R. Davis",
+    "source": "Attributions/quotes"
+  },
+  {
+    "id": 340,
+    "quote": "The greatest pleasure in life is doing what people say you cannot do.\n- Walter Bagehot",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 341,
+    "quote": "True success is overcoming the fear of being unsuccessful.\n- Paul Sweeney",
+    "source": "Motivational writings/quotes"
+  },
+  {
+    "id": 342,
+    "quote": "To succeed in life, you need two things: ignorance and confidence.\n- Mark Twain",
+    "source": "Humorous attributions/quotes"
+  },
+  {
+    "id": 343,
+    "quote": "It always seems impossible until it's done.\n- Nelson Mandela",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 344,
+    "quote": "People will forget what you said. They will forget what you did. But they will never forget how you made them feel.\n- Maya Angelou",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 345,
+    "quote": "Create with the heart; build with the mind.\n- Criss Jami",
+    "source": "Philosophical writings/quotes"
+  },
+  {
+    "id": 346,
+    "quote": "The way to get started is to quit talking and begin doing.\n- Walt Disney",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 347,
+    "quote": "A noble person is careful in his speech and generous in his actions.\n- Islamic ethical maxim",
+    "source": "Islamic moral teachings"
+  },
+  {
+    "id": 348,
+    "quote": "When in doubt, choose change.\n- Lily Leung",
+    "source": "Contemporary sayings"
+  },
+  {
+    "id": 349,
+    "quote": "To handle yourself, use your head; to handle others, use your heart.\n- Eleanor Roosevelt",
+    "source": "Public statements/quotes"
+  },
+  {
+    "id": 350,
+    "quote": "The secret of getting ahead is getting started.\n- Mark Twain (popular attribution)",
+    "source": "Attributions/quotes"
+  },
+  {
+    "id": 351,
+    "quote": "No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.\n- Buddha",
+    "source": "Attributed teachings"
+  },
+  {
+    "id": 352,
+    "quote": "The distance between insanity and genius is measured only by success.\n- Bruce Feirstein",
+    "source": "Writings/quotes"
+  },
+  {
+    "id": 353,
+    "quote": "Be the change you wish to see in the world.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 354,
+    "quote": "Success is a journey, not a destination.\n- Ben Sweetland",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 355,
+    "quote": "Little by little, one travels far.\n- J.R.R. Tolkien",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 356,
+    "quote": "The most effective way to do it, is to do it.\n- Amelia Earhart",
+    "source": "Biographical attributions"
+  },
+  {
+    "id": 357,
+    "quote": "The highest form of worship is service to humanity.\n- Islamic ethical paraphrase",
+    "source": "Islamic teachings/ethics"
+  },
+  {
+    "id": 358,
+    "quote": "A good life is a collection of happy moments.\n- Denis Waitley",
+    "source": "Motivational writings/quotes"
+  },
+  {
+    "id": 359,
+    "quote": "You will never do anything in this world without courage.\n- Aristotle",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 360,
+    "quote": "If you can dream it, you can do it.\n- Walt Disney",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 361,
+    "quote": "The best way to predict the future is to create it.\n- Peter Drucker",
+    "source": "Management writings/quotes"
+  },
+  {
+    "id": 362,
+    "quote": "A kind heart is a fountain of gladness, making everything in its vicinity freshen into smiles.\n- Washington Irving",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 363,
+    "quote": "You have not lived today until you have done something for someone who can never repay you.\n- John Bunyan",
+    "source": "Religious writings/attributions"
+  },
+  {
+    "id": 364,
+    "quote": "Every day may not be good... but there's something good in every day.\n- Alice Morse Earle",
+    "source": "Historical attributions"
+  },
+  {
+    "id": 365,
+    "quote": "The secret of getting ahead is getting started.\n- Mark Twain (repeated attribution)",
+    "source": "Attributions/quotes"
+  },
+  {
+    "id": 366,
+    "quote": "It does not matter how slowly you go as long as you do not stop.\n- Confucius",
+    "source": "Analects/attributions"
+  },
+  {
+    "id": 367,
+    "quote": "He who has a why to live can bear almost any how.\n- Friedrich Nietzsche",
+    "source": "Philosophical writings/attributions"
+  },
+  {
+    "id": 368,
+    "quote": "What lies behind us and what lies before us are tiny matters compared to what lies within us.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 369,
+    "quote": "The only true wisdom is in knowing you know nothing.\n- Socrates",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 370,
+    "quote": "Greatness is not in where we stand, but in what direction we are moving.\n- Oliver Wendell Holmes Sr.",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 371,
+    "quote": "Pleasure in the job puts perfection in the work.\n- Aristotle",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 372,
+    "quote": "Do not stop thinking of life as an adventure.\n- Eleanor Roosevelt",
+    "source": "Public statements/quotes"
+  },
+  {
+    "id": 373,
+    "quote": "If you're going through hell, keep going.\n- Winston Churchill",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 374,
+    "quote": "We are shaped by our thoughts; we become what we think.\n- Buddha",
+    "source": "Attributed teachings"
+  },
+  {
+    "id": 375,
+    "quote": "The greatest gift of life is friendship, and I have received it.\n- Hubert H. Humphrey",
+    "source": "Political quotes/attributions"
+  },
+  {
+    "id": 376,
+    "quote": "When we give cheerfully and accept gratefully, everyone is blessed.\n- Maya Angelou",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 377,
+    "quote": "The best preparation for tomorrow is doing your best today.\n- H. Jackson Brown Jr.",
+    "source": "Life's Little Instruction Book"
+  },
+  {
+    "id": 378,
+    "quote": "To plant a garden is to believe in tomorrow.\n- Audrey Hepburn",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 379,
+    "quote": "If opportunity doesn't knock, build a door.\n- Milton Berle",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 380,
+    "quote": "A goal is a dream with a deadline.\n- Napoleon Hill",
+    "source": "Think and Grow Rich attributions"
+  },
+  {
+    "id": 381,
+    "quote": "The future belongs to those who prepare for it today.\n- Malcolm X",
+    "source": "Speeches/quotes"
+  },
+  {
+    "id": 382,
+    "quote": "The greatest pleasure in life is doing what people say you cannot do.\n- Walter Bagehot",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 383,
+    "quote": "If you want to be happy, be.\n- Leo Tolstoy",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 384,
+    "quote": "Be a lamp, or a lifeboat, or a ladder. Help someone’s soul heal.\n- Rumi",
+    "source": "Poetry/translation"
+  },
+  {
+    "id": 385,
+    "quote": "Live your life with arms wide open.\n- Unknown (inspirational lyric paraphrase)",
+    "source": "Contemporary sayings"
+  },
+  {
+    "id": 386,
+    "quote": "The only thing necessary for the triumph of evil is for good people to do nothing.\n- Edmund Burke",
+    "source": "Political attributions"
+  },
+  {
+    "id": 387,
+    "quote": "Stay patient and trust your journey.\n- Unknown",
+    "source": "Modern motivational sayings"
+  },
+  {
+    "id": 388,
+    "quote": "Where there is love and inspiration, I don't think you can go wrong.\n- Ella Fitzgerald",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 389,
+    "quote": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.\n- Aristotle (paraphrase by Will Durant)",
+    "source": "The Story of Philosophy"
+  },
+  {
+    "id": 390,
+    "quote": "Don't count the days, make the days count.\n- Muhammad Ali",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 391,
+    "quote": "The best way to cheer yourself up is to try to cheer somebody else up.\n- Mark Twain",
+    "source": "Attributed sayings"
+  },
+  {
+    "id": 392,
+    "quote": "Be kind whenever possible. It is always possible.\n- Dalai Lama",
+    "source": "Teachings/quotes"
+  },
+  {
+    "id": 393,
+    "quote": "We make a living by what we get, but we make a life by what we give.\n- Winston Churchill",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 394,
+    "quote": "Life is what happens when you're busy making other plans.\n- John Lennon",
+    "source": "Song lyrics/quotes"
+  },
+  {
+    "id": 395,
+    "quote": "The more that you read, the more things you will know. The more that you learn, the more places you'll go.\n- Dr. Seuss",
+    "source": "I Can Read With My Eyes Shut!"
+  },
+  {
+    "id": 396,
+    "quote": "It is our choices... that show what we truly are, far more than our abilities.\n- J.K. Rowling",
+    "source": "Harry Potter series/quotes"
+  },
+  {
+    "id": 397,
+    "quote": "No act of kindness, no matter how small, is ever wasted.\n- Aesop",
+    "source": "Fables/attributions"
+  },
+  {
+    "id": 398,
+    "quote": "A life without cause is a life without effect.\n- Baruch Spinoza",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 399,
+    "quote": "The best way to find yourself is to lose yourself in the service of others.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 400,
+    "quote": "You cannot find peace by avoiding life.\n- Virginia Woolf",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 401,
+    "quote": "Do what you can, with what you have, where you are.\n- Theodore Roosevelt",
+    "source": "Speech (widely quoted)"
+  },
+  {
+    "id": 402,
+    "quote": "It always seems impossible until it is done.\n- Nelson Mandela",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 403,
+    "quote": "There is no substitute for hard work.\n- Thomas Edison",
+    "source": "Interviews/biographies/quotes"
+  },
+  {
+    "id": 404,
+    "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.\n- Nelson Mandela",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 405,
+    "quote": "The best way out is always through.\n- Robert Frost",
+    "source": "Poems/quotes"
+  },
+  {
+    "id": 406,
+    "quote": "Action is the foundational key to all success.\n- Pablo Picasso",
+    "source": "Artistic attributions"
+  },
+  {
+    "id": 407,
+    "quote": "The secret of getting ahead is getting started.\n- Mark Twain (popular attribution)",
+    "source": "Attributions/quotes"
+  },
+  {
+    "id": 408,
+    "quote": "You must be the change you wish to see in the world.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 409,
+    "quote": "Be the reason someone believes in the goodness of people.\n- Unknown",
+    "source": "Modern inspirational sayings"
+  },
+  {
+    "id": 410,
+    "quote": "Don't be afraid to give up the good to go for the great.\n- John D. Rockefeller",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 411,
+    "quote": "The only real mistake is the one from which we learn nothing.\n- Henry Ford",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 412,
+    "quote": "You only live once, but if you do it right, once is enough.\n- Mae West",
+    "source": "Humorous attributions"
+  },
+  {
+    "id": 413,
+    "quote": "The harder you work for something, the greater you'll feel when you achieve it.\n- Unknown",
+    "source": "Modern motivational sayings"
+  },
+  {
+    "id": 414,
+    "quote": "Small deeds done are better than great deeds planned.\n- Peter Marshall",
+    "source": "Sermons/quotes"
+  },
+  {
+    "id": 415,
+    "quote": "Live as if you were to die tomorrow. Learn as if you were to live forever.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 416,
+    "quote": "The only way to do great work is to love what you do.\n- Steve Jobs",
+    "source": "Stanford Commencement Address, 2005"
+  },
+  {
+    "id": 417,
+    "quote": "Don't let what you cannot do interfere with what you can do.\n- John Wooden",
+    "source": "Coaching maxims/quotes"
+  },
+  {
+    "id": 418,
+    "quote": "Our greatest glory is not in never falling, but in rising every time we fall.\n- Confucius",
+    "source": "Analects"
+  },
+  {
+    "id": 419,
+    "quote": "Sow a thought, reap an action; sow an action, reap a habit; sow a habit, reap a character; sow a character, reap a destiny.\n- Stephen R. Covey (paraphrase of older wisdom)",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 420,
+    "quote": "You can't use up creativity. The more you use, the more you have.\n- Maya Angelou",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 421,
+    "quote": "Life is like riding a bicycle. To keep your balance you must keep moving.\n- Albert Einstein",
+    "source": "Letters/attributions"
+  },
+  {
+    "id": 422,
+    "quote": "Do not go where the path may lead, go instead where there is no path and leave a trail.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 423,
+    "quote": "People rarely succeed unless they have fun in what they are doing.\n- Dale Carnegie",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 424,
+    "quote": "The successful warrior is the average man, with laser-like focus.\n- Bruce Lee",
+    "source": "Martial arts writings/quotes"
+  },
+  {
+    "id": 425,
+    "quote": "Life isn't about finding yourself. Life is about creating yourself.\n- George Bernard Shaw",
+    "source": "Plays/quotes"
+  },
+  {
+    "id": 426,
+    "quote": "The secret of getting things done is to act.\n- Dante Alighieri",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 427,
+    "quote": "Nothing great was ever achieved without enthusiasm.\n- George H. Ellis",
+    "source": "Historical attributions"
+  },
+  {
+    "id": 428,
+    "quote": "The best way to predict your future is to create it.\n- Abraham Lincoln (paraphrase of sentiment)",
+    "source": "Political attributions"
+  },
+  {
+    "id": 429,
+    "quote": "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 430,
+    "quote": "The meaning of life is to find your gift. The purpose of life is to give it away.\n- Pablo Picasso",
+    "source": "Artistic attributions/quotes"
+  },
+  {
+    "id": 431,
+    "quote": "When you can't find the sunshine, be the sunshine.\n- Unknown",
+    "source": "Contemporary inspirational sayings"
+  },
+  {
+    "id": 432,
+    "quote": "Do what you love, and the money will follow.\n- Marsha Sinetar",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 433,
+    "quote": "The best way to cheer yourself up is to try to cheer somebody else up.\n- Mark Twain",
+    "source": "Attributed sayings"
+  },
+  {
+    "id": 434,
+    "quote": "Success is not the key to happiness. Happiness is the key to success.\n- Albert Schweitzer",
+    "source": "Philanthropic attributions"
+  },
+  {
+    "id": 435,
+    "quote": "The purpose of life is a life of purpose.\n- Robert Byrne",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 436,
+    "quote": "If you want to be happy, be.\n- Leo Tolstoy",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 437,
+    "quote": "The best gift you can give yourself is a little bit of your own attention.\n- Anthony J. D'Angelo",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 438,
+    "quote": "You are always stronger and more resourceful than you give yourself credit for.\n- Rob Liano",
+    "source": "Motivational writings/quotes"
+  },
+  {
+    "id": 439,
+    "quote": "Success is liking yourself, liking what you do, and liking how you do it.\n- Maya Angelou",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 440,
+    "quote": "Happiness is not something ready made. It comes from your own actions.\n- Dalai Lama",
+    "source": "Teachings/quotes"
+  },
+  {
+    "id": 441,
+    "quote": "The best way to find yourself is to lose yourself in the service of others.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 442,
+    "quote": "A person who never made a mistake never tried anything new.\n- Albert Einstein",
+    "source": "Letters/attributions"
+  },
+  {
+    "id": 443,
+    "quote": "Your attitude, not your aptitude, will determine your altitude.\n- Zig Ziglar",
+    "source": "Motivational writings/quotes"
+  },
+  {
+    "id": 444,
+    "quote": "The only limits that exist are the ones you place on yourself.\n- Unknown",
+    "source": "Contemporary inspirational sayings"
+  },
+  {
+    "id": 445,
+    "quote": "Wherever you go, go with all your heart.\n- Confucius",
+    "source": "Analects/attributions"
+  },
+  {
+    "id": 446,
+    "quote": "The best way to make your dreams come true is to wake up.\n- Paul Valery",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 447,
+    "quote": "Happiness is not by chance, but by choice.\n- Jim Rohn",
+    "source": "Motivational writings/quotes"
+  },
+  {
+    "id": 448,
+    "quote": "The greatest wealth is health.\n- Virgil",
+    "source": "Classical attributions"
+  },
+  {
+    "id": 449,
+    "quote": "Be somebody who makes everybody feel like a somebody.\n- Kid President",
+    "source": "Contemporary inspirational media"
+  },
+  {
+    "id": 450,
+    "quote": "Your time is limited, don't waste it living someone else's life.\n- Steve Jobs",
+    "source": "Stanford Commencement Address, 2005"
+  },
+  {
+    "id": 451,
+    "quote": "Don't watch the clock; do what it does. Keep going.\n- Sam Levenson",
+    "source": "Books/quotes"
+  },
+  {
+    "id": 452,
+    "quote": "The best way to get started is to quit talking and begin doing.\n- Walt Disney",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 453,
+    "quote": "The greatest pleasure in life is doing what people say you cannot do.\n- Walter Bagehot",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 454,
+    "quote": "You miss 100% of the shots you don't take.\n- Wayne Gretzky",
+    "source": "Interview/quotes"
+  },
+  {
+    "id": 455,
+    "quote": "Nothing will work unless you do.\n- Maya Angelou",
+    "source": "Collected quotes/interviews"
+  },
+  {
+    "id": 456,
+    "quote": "Start where you are. Use what you have. Do what you can.\n- Arthur Ashe",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 457,
+    "quote": "Life is short, and it's up to you to make it sweet.\n- Sarah Louise Delany",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 458,
+    "quote": "The only way to achieve the impossible is to believe it is possible.\n- Charles Kingsleigh (fictional paraphrase)",
+    "source": "Popularized fiction quotes"
+  },
+  {
+    "id": 459,
+    "quote": "Don't be afraid to give up the good to go for the great.\n- John D. Rockefeller",
+    "source": "Attributed/quotes"
+  },
+  {
+    "id": 460,
+    "quote": "The first step towards getting somewhere is to decide you're not going to stay where you are.\n- J.P. Morgan",
+    "source": "Business attributions"
+  },
+  {
+    "id": 461,
+    "quote": "If you want to lift yourself up, lift up someone else.\n- Booker T. Washington",
+    "source": "Speeches/quotes"
+  },
+  {
+    "id": 462,
+    "quote": "To handle yourself, use your head; to handle others, use your heart.\n- Eleanor Roosevelt",
+    "source": "Public statements/quotes"
+  },
+  {
+    "id": 463,
+    "quote": "The only person you are destined to become is the person you decide to be.\n- Ralph Waldo Emerson",
+    "source": "Essays/quotes"
+  },
+  {
+    "id": 464,
+    "quote": "Don't let what you cannot do interfere with what you can do.\n- John Wooden",
+    "source": "Coaching maxims/quotes"
+  },
+  {
+    "id": 465,
+    "quote": "The only true wisdom is in knowing you know nothing.\n- Socrates",
+    "source": "Philosophical attributions"
+  },
+  {
+    "id": 466,
+    "quote": "Perseverance is failing 19 times and succeeding the 20th.\n- Julie Andrews",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 467,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.\n- Winston Churchill",
+    "source": "Speech/quotations"
+  },
+  {
+    "id": 468,
+    "quote": "Happiness is not something ready made. It comes from your own actions.\n- Dalai Lama",
+    "source": "Teachings/quotes"
+  },
+  {
+    "id": 469,
+    "quote": "The best preparation for tomorrow is doing your best today.\n- H. Jackson Brown Jr.",
+    "source": "Life's Little Instruction Book"
+  },
+  {
+    "id": 470,
+    "quote": "We can do no great things; only small things with great love.\n- Mother Teresa",
+    "source": "Collected quotes/quotes"
+  },
+  {
+    "id": 471,
+    "quote": "The real test is not whether you avoid this failure, because you won't. It's whether you let it harden or shame you into inaction.\n- Barack Obama",
+    "source": "Speeches/quotes"
+  },
+  {
+    "id": 472,
+    "quote": "Great things are done by a series of small things brought together.\n- Vincent Van Gogh",
+    "source": "Artistic attributions"
+  },
+  {
+    "id": 473,
+    "quote": "Be honest, be helpful, be a beacon of truth and kindness.\n- Unknown",
+    "source": "Moral sayings"
+  },
+  {
+    "id": 474,
+    "quote": "A little progress each day adds up to big results.\n- Satya Nani",
+    "source": "Self-help quotations"
+  },
+  {
+    "id": 475,
+    "quote": "You must be the change you wish to see in the world.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 476,
+    "quote": "It does not matter how slowly you go as long as you do not stop.\n- Confucius",
+    "source": "Analects/attributions"
+  },
+  {
+    "id": 477,
+    "quote": "The harder you work for something, the greater you'll feel when you achieve it.\n- Unknown",
+    "source": "Modern motivational sayings"
+  },
+  {
+    "id": 478,
+    "quote": "Be the person who makes others feel appreciated.\n- Unknown",
+    "source": "Contemporary inspirational sayings"
+  },
+  {
+    "id": 479,
+    "quote": "To change the world, we must be good to those who cannot repay us.\n- Pope Francis",
+    "source": "Religious leader statements/quotes"
+  },
+  {
+    "id": 480,
+    "quote": "A kind gesture can reach a wound that only compassion can heal.\n- Steve Maraboli",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 481,
+    "quote": "Do not wait for leaders; do it alone, person to person.\n- Mother Teresa",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 482,
+    "quote": "If you want to build a ship, don't drum up the men to gather wood, divide the work and give orders. Instead, teach them to yearn for the vast and endless sea.\n- Antoine de Saint-Exupéry",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 483,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.\n- Walter Elliot",
+    "source": "Quoted sayings"
+  },
+  {
+    "id": 484,
+    "quote": "The more we do for others, the more we do for ourselves.\n- Oscar Wilde",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 485,
+    "quote": "You don't have to be great to start, but you have to start to be great.\n- Zig Ziglar",
+    "source": "Motivational books/quotes"
+  },
+  {
+    "id": 486,
+    "quote": "To accomplish great things, we must not only act, but also dream; not only plan, but also believe.\n- Anatole France",
+    "source": "Literary attributions"
+  },
+  {
+    "id": 487,
+    "quote": "Joy is not in things; it is in us.\n- Richard Wagner",
+    "source": "Artistic attributions"
+  },
+  {
+    "id": 488,
+    "quote": "The only impossible journey is the one you never begin.\n- Tony Robbins",
+    "source": "Motivational writings/quotes"
+  },
+  {
+    "id": 489,
+    "quote": "Out of difficulties grow miracles.\n- Jean de La Bruyère",
+    "source": "Classical attributions"
+  },
+  {
+    "id": 490,
+    "quote": "When you cease to dream you cease to live.\n- Malcolm Forbes",
+    "source": "Business quotes/collections"
+  },
+  {
+    "id": 491,
+    "quote": "Success is the sum of small efforts repeated day in and day out.\n- Robert Collier",
+    "source": "Self-help writings/quotes"
+  },
+  {
+    "id": 492,
+    "quote": "What you do today can improve all your tomorrows.\n- Ralph Marston",
+    "source": "Daily motivational writings/quotes"
+  },
+  {
+    "id": 493,
+    "quote": "Happiness depends upon ourselves.\n- Aristotle",
+    "source": "Nicomachean Ethics"
+  },
+  {
+    "id": 494,
+    "quote": "It is never too late to be what you might have been.\n- George Eliot",
+    "source": "Attributed/novels/quotes"
+  },
+  {
+    "id": 495,
+    "quote": "The more you praise and celebrate your life, the more there is in life to celebrate.\n- Oprah Winfrey",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 496,
+    "quote": "Let us always meet each other with smile, for the smile is the beginning of love.\n- Mother Teresa",
+    "source": "Collected quotes"
+  },
+  {
+    "id": 497,
+    "quote": "When you learn, teach. When you get, give.\n- Maya Angelou",
+    "source": "Interviews/quotes"
+  },
+  {
+    "id": 498,
+    "quote": "A warm smile is the universal language of kindness.\n- William Arthur Ward",
+    "source": "Inspirational writings/quotes"
+  },
+  {
+    "id": 499,
+    "quote": "The best way to find yourself is to lose yourself in the service of others.\n- Mahatma Gandhi",
+    "source": "Collected works/quotes"
+  },
+  {
+    "id": 500,
+    "quote": "Do not judge my story by the chapter you walked in on.\n- Unknown",
+    "source": "Contemporary proverb/quote"
+  }
+]
