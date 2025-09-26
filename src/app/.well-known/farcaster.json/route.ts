@@ -18,7 +18,7 @@ export async function GET() {
       splashBackgroundColor: "#FEEBC8",
       castShareUrl: appUrl,
       webhookUrl: `${appUrl}/api/webhook`,
-      subtitle: "Get inspired with random quotes",
+      subtitle: "Quotes to inspire",
       description:
         "Get inspired with random quotes. Share them on Farcaster with a single tap.",
       primaryCategory: "utility",
