@@ -1,18 +1,8 @@
 import { ImageResponse } from "next/og";
 import quotes from "../../components/quotes.json";
-import { readFileSync } from "fs";
-import { join } from "path";
-
 
 export async function GET(req: Request) {
   try {
-    const fontRegular = readFileSync(
-      join(process.cwd(), "public", "fonts", "Georgia.ttf")
-    );
-    const fontItalic = readFileSync(
-      join(process.cwd(), "public", "fonts", "Georgia-Italic.ttf")
-    );
-
     const url = new URL(req.url);
     const index = parseInt(url.searchParams.get("q") || "0");
     const currentQuote = quotes[index] || quotes[0];
@@ -39,20 +29,6 @@ export async function GET(req: Request) {
       {
         width: 600,
         height: 400,
-        fonts: [
-          {
-            name: "Georgia",
-            data: fontRegular,
-            style: "normal",
-            weight: 400,
-          },
-          {
-            name: "Georgia",
-            data: fontItalic,
-            style: "italic",
-            weight: 400,
-          },
-        ],
       }
     );
   } catch (err) {
