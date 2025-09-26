@@ -31,7 +31,7 @@ export default function Main() {
     try {
       const result = await sdk.actions.composeCast({
         text: "GM",
-        embeds: [`${process.env.NEXT_PUBLIC_URL}/og?q=${q}`],
+        embeds: [`${process.env.NEXT_PUBLIC_URL}?q=${q}`],
       });
 
       return result.cast?.hash;
