@@ -7,7 +7,7 @@ export const revalidate = 300;
 
 interface Props {
   searchParams: Promise<{
-    q: string;
+    q: number;
   }>;
 }
 
