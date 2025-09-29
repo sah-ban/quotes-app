@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/contracts/tierRegistryAbi.js"
+    "src/contracts/abi.js"
   ],
   "exclude": ["node_modules"]
 }

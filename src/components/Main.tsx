@@ -1,10 +1,24 @@
 import { useState, useEffect, useCallback } from "react";
 import sdk, { AddMiniApp, type Context } from "@farcaster/miniapp-sdk";
 import quotes from "./quotes.json";
+import MintButton from "./MintButton";
+import Admin from "./AdminPanel";
+import Switch from "./Switch";
+import Connect from "./Connect";
+import { arbitrum } from "viem/chains";
+import {
+  useAccount,
+  useReadContract,
+  useWriteContract,
+  useWaitForTransactionReceipt,
+} from "wagmi";
+import { Address } from "viem";
+import { contractABI } from "../contracts/abi.js";
 
 export default function Main() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [context, setContext] = useState<Context.MiniAppContext>();
+  const { isConnected, chainId, address } = useAccount();
 
   const [randomIndex, setRandomIndex] = useState(
     Math.floor(Math.random() * quotes.length)
@@ -27,10 +41,11 @@ export default function Main() {
     }
   }, [isSDKLoaded]);
 
+  const [castHash, setCastHash] = useState<string | null>(null);
+
   const cast = async (q: number): Promise<string | undefined> => {
     try {
       const result = await sdk.actions.composeCast({
-        text: `${getTimeGreeting()}`,
         embeds: [`${process.env.NEXT_PUBLIC_URL}?q=${q}`],
       });
 
@@ -42,9 +57,11 @@ export default function Main() {
   };
 
   const handleCast = async () => {
-    await cast(randomIndex);
+    const hash = await cast(randomIndex);
+    if (hash) {
+      setCastHash(hash);
+    }
   };
-
   const handleRandom = () => {
     let newIndex = Math.floor(Math.random() * quotes.length);
     while (newIndex === randomIndex && quotes.length > 1) {
@@ -74,69 +91,158 @@ export default function Main() {
     }
   }, []);
 
-  function getTimeGreeting() {
-    const hour = new Date().getHours();
-    
-    if (hour >= 5 && hour < 12) {
-        return "GM";
-    } else if (hour >= 12 && hour < 17) {
-        return "Good Afternoon";
-    } else if (hour >= 17 && hour < 22) {
-        return "Good Evening";
+  const { writeContract, data: hash, isPending } = useWriteContract();
+  const { isLoading: isConfirming, isSuccess: isConfirmed } =
+    useWaitForTransactionReceipt({ hash });
+
+  const CONTRACT_ADDRESS =
+    "0x9c713a2ADD0Bc8e676623C3300728A995Ac74eD8" as Address;
+
+  const { data: lastClaimed } = useReadContract({
+    address: CONTRACT_ADDRESS,
+    abi: contractABI,
+    functionName: "getLastClaimed",
+    args: address ? [address] : undefined,
+    chainId: arbitrum.id,
+  }) as { data: number | undefined };
+
+  const handleClaim = async () => {
+    if (!castHash) {
+      handleCast();
     } else {
-        return "GN";
+      await writeContract({
+        address: CONTRACT_ADDRESS,
+        abi: contractABI,
+        functionName: "claim",
+        chainId: arbitrum.id,
+      });
     }
-}
+  };
 
-  return (
-    <div
-      style={{
-        paddingTop: context?.client.safeAreaInsets?.top ?? 0,
-        paddingBottom: context?.client.safeAreaInsets?.bottom ?? 0,
-        paddingLeft: context?.client.safeAreaInsets?.left ?? 0,
-        paddingRight: context?.client.safeAreaInsets?.right ?? 0,
-      }}
-      className="h-screen bg-slate-800 flex flex-col items-center justify-center"
-    >
-      <div className="flex flex-col items-center min-h-screen w-full justify-center bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8] p-4">
-        <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md transform transition-all hover:shadow-2xl">
-          {/* Quote Display with Fade-in Animation and Key */}
-          <div key={randomIndex} className="text-center animate-fadeIn">
-            <p className="text-xl md:text-2xl font-serif text-gray-800 italic mb-4 leading-relaxed">
-              &ldquo;{quoteText}&rdquo;
-            </p>
-            <p className="text-gray-500 text-lg font-light">
-              {author || "Unknown"}
-            </p>
-          </div>
+  const canClaim = lastClaimed
+    ? Date.now() / 1000 >= Number(lastClaimed) + 12 * 60 * 60
+    : true;
 
-          {/* Buttons */}
-          <div className="flex justify-between items-center mt-8 gap-4">
-            <button
-              className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-2 rounded-lg transition-all duration-300 font-medium w-[150px] shadow-md hover:shadow-lg"
-              onClick={handleRandom}
-            >
-              New Quote
-            </button>
-            <button
-              className="bg-[#10B981] hover:bg-[#059669] text-white px-6 py-2 rounded-lg transition-all duration-300 font-medium w-[150px] shadow-md hover:shadow-lg"
-              onClick={handleCast}
-            >
-              Share
-            </button>
-          </div>
-        </div>
+  const formatTimeElapsed = (timestamp: string | number | undefined) => {
+    if (!timestamp || timestamp === "never") return "Never";
+
+    const numTimestamp = parseInt(timestamp.toString(), 10);
+    if (isNaN(numTimestamp) || numTimestamp <= 0) return "Never";
+
+    const now = Math.floor(Date.now() / 1000);
+    const secondsElapsed = now - numTimestamp;
+
+    if (secondsElapsed <= 0) return "Just now";
+
+    const days = Math.floor(secondsElapsed / (24 * 60 * 60));
+    const hours = Math.floor((secondsElapsed % (24 * 60 * 60)) / (60 * 60));
+    const minutes = Math.floor((secondsElapsed % (60 * 60)) / 60);
+    const seconds = secondsElapsed % 60;
+
+    const parts: string[] = [];
+    if (days > 0) parts.push(`${days}d`);
+    if (hours > 0) parts.push(`${hours}h`);
+    if (minutes > 0) parts.push(`${minutes}m`);
+    if (seconds > 0 && parts.length === 0)
+      parts.push(`${seconds} sec${seconds !== 1 ? "s" : ""}`);
+
+    return parts.length > 0 ? parts.join(" ") + " ago" : "Just now";
+  };
+
+  if (!isConnected) {
+    return (
+      <div className="flex items-center justify-center h-screen w-full bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8]">
+        <Connect />
       </div>
-      <footer className="flex-none fixed bottom-0 left-0 w-full p-4 text-center">
-        {!context?.client.added && (
-          <button
-            className="bg-[#7C3AED] text-white px-4 py-2 rounded-lg hover:bg-[#38BDF8] transition cursor-pointer font-semibold w-full mt-2"
-            onClick={addMiniapp}
-          >
-            {addMiniappResult || "Add Miniapp to Farcaster"}
-          </button>
-        )}
-      </footer>
-    </div>
-  );
+    );
+  }
+  if (chainId !== arbitrum.id) {
+    return (
+      <div className="flex items-center justify-center h-screen w-full bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8]">
+        <Switch />
+      </div>
+    );
+  }
+
+  if (context) {
+    return (
+      <div
+        style={{
+          paddingTop: context?.client.safeAreaInsets?.top ?? 0,
+          paddingBottom: context?.client.safeAreaInsets?.bottom ?? 0,
+          paddingLeft: context?.client.safeAreaInsets?.left ?? 0,
+          paddingRight: context?.client.safeAreaInsets?.right ?? 0,
+        }}
+      >
+        <div className="flex flex-col items-center min-h-screen w-full justify-center bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8] px-4">
+          <header className="flex-none fixed top-0 left-0 w-full">
+            {context.user.fid === 268438 && <Admin />}
+          </header>
+          <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md transform transition-all hover:shadow-2xl">
+            <div key={randomIndex} className="text-center animate-fadeIn">
+              <p className="text-xl md:text-2xl font-serif text-gray-800 italic mb-4 leading-relaxed">
+                &ldquo;{quoteText}&rdquo;
+              </p>
+              <p className="text-gray-500 text-lg font-light">
+                {author || "Unknown"}
+              </p>
+            </div>
+
+            <div className="flex justify-between items-center mt-8 gap-4">
+              <button
+                className="bg-[#F59E0B] hover:bg-[#D97706] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
+                onClick={handleRandom}
+              >
+                New Quote
+              </button>
+              <button
+                className="bg-[#10B981] hover:bg-[#059669] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
+                onClick={handleCast}
+              >
+                Share
+              </button>
+            </div>
+          </div>
+
+          <div className="flex flex-row items-center mt-8 gap-4">
+            <button
+              onClick={handleClaim}
+              disabled={!canClaim || isPending || isConfirming}
+              className="bg-[#F59E0B] hover:bg-[#D97706] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
+            >
+              {isPending
+                ? "Pending..."
+                : isConfirming
+                ? "Processing..."
+                : isConfirmed
+                ? "Done!"
+                : canClaim
+                ? "Share to Claim"
+                : "Cooldown Active"}
+            </button>
+            <MintButton q={randomIndex} />
+          </div>
+          <p className="text-black mt-3">
+            Last Claimed: {formatTimeElapsed(lastClaimed)}
+          </p>
+          {!isConfirmed && (
+            <p className="text-lime-600 mt-3">
+              You can Claim again in 12 hours!
+            </p>
+          )}
+        </div>
+
+        <footer className="flex-none fixed bottom-0 left-0 w-full p-4 text-center">
+          {!context?.client.added && (
+            <button
+              className="bg-[#7C3AED] text-white px-4 py-2 rounded-lg hover:bg-[#38BDF8] transition cursor-pointer font-semibold w-full mt-2"
+              onClick={addMiniapp}
+            >
+              {addMiniappResult || "Add Miniapp to Farcaster"}
+            </button>
+          )}
+        </footer>
+      </div>
+    );
+  }
 }
