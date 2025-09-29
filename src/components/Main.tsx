@@ -203,7 +203,7 @@ export default function Main() {
               </button>
             </div>
           </div>
-
+<div className="hidden">
           <div className="flex flex-row items-center mt-8 gap-4">
             <button
               onClick={handleClaim}
@@ -229,7 +229,7 @@ export default function Main() {
             <p className="text-lime-600 mt-3">
               You can Claim again in 12 hours!
             </p>
-          )}
+          )}</div>
         </div>
 
         <footer className="flex-none fixed bottom-0 left-0 w-full p-4 text-center">
