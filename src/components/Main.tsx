@@ -225,7 +225,7 @@ export default function Main() {
           <p className="text-black mt-3">
             Last Claimed: {formatTimeElapsed(lastClaimed)}
           </p>
-          {!isConfirmed && (
+          {isConfirmed && (
             <p className="text-lime-600 mt-3">
               You can Claim again in 12 hours!
             </p>
