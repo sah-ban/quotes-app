@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import sdk, { AddMiniApp, type Context } from "@farcaster/miniapp-sdk";
 import quotes from "./quotes.json";
-import MintButton from "./MintButton";
+// import MintButton from "./MintButton";
 import Admin from "./AdminPanel";
 import Switch from "./Switch";
 import Connect from "./Connect";
@@ -203,7 +203,6 @@ export default function Main() {
               </button>
             </div>
           </div>
-<div className="hidden">
           <div className="flex flex-row items-center mt-8 gap-4">
             <button
               onClick={handleClaim}
@@ -217,10 +216,10 @@ export default function Main() {
                 : isConfirmed
                 ? "Done!"
                 : canClaim
-                ? "Share to Claim"
+                ? (castHash?"Claim":"Share to Claim")
                 : "Cooldown Active"}
             </button>
-            <MintButton q={randomIndex} />
+            {/* <MintButton q={randomIndex} /> */}
           </div>
           <p className="text-black mt-3">
             Last Claimed: {formatTimeElapsed(lastClaimed)}
@@ -229,7 +228,7 @@ export default function Main() {
             <p className="text-lime-600 mt-3">
               You can Claim again in 12 hours!
             </p>
-          )}</div>
+          )}
         </div>
 
         <footer className="flex-none fixed bottom-0 left-0 w-full p-4 text-center">
