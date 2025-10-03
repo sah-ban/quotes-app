@@ -116,7 +116,7 @@ const Admin: React.FC = () => {
         <p>
           Balance:{" "}
           {contractBalance
-            ? `${formatUnits(contractBalance, 18)} ARB`
+            ? `${Number(formatUnits(contractBalance, 18)).toFixed(3)} ARB`
             : "Loading..."}
         </p>
         <div className="flex flex-row gap-3">

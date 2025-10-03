@@ -3,14 +3,14 @@ import sdk, { AddMiniApp, type Context } from "@farcaster/miniapp-sdk";
 import quotes from "./quotes.json";
 // import MintButton from "./MintButton";
 import Admin from "./AdminPanel";
-import Switch from "./Switch";
 import Connect from "./Connect";
-import { arbitrum } from "viem/chains";
+import { arbitrum } from "wagmi/chains";
 import {
   useAccount,
   useReadContract,
   useWriteContract,
   useWaitForTransactionReceipt,
+  useSwitchChain,
 } from "wagmi";
 import { Address } from "viem";
 import { contractABI } from "../contracts/abi.js";
@@ -18,7 +18,8 @@ import { contractABI } from "../contracts/abi.js";
 export default function Main() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [context, setContext] = useState<Context.MiniAppContext>();
-  const { isConnected, chainId, address } = useAccount();
+  const { isConnected,chainId, address } = useAccount();
+  const { switchChainAsync } = useSwitchChain();
 
   const [randomIndex, setRandomIndex] = useState(
     Math.floor(Math.random() * quotes.length)
@@ -44,6 +45,7 @@ export default function Main() {
   const [castHash, setCastHash] = useState<string | null>(null);
 
   const cast = async (q: number): Promise<string | undefined> => {
+     await switchChainAsync({ chainId: arbitrum.id });
     try {
       const result = await sdk.actions.composeCast({
         embeds: [`${process.env.NEXT_PUBLIC_URL}?q=${q}`],
@@ -110,6 +112,16 @@ export default function Main() {
     if (!castHash) {
       handleCast();
     } else {
+      if (chainId !== arbitrum.id) {
+        try {
+          await switchChainAsync({ chainId: arbitrum.id });
+        } catch (switchError) {
+          console.error("Failed to switch chain:", switchError);
+          throw new Error(
+            `Please manually switch to ${arbitrum.name} in your wallet.`
+          );
+        }
+      }
       await writeContract({
         address: CONTRACT_ADDRESS,
         abi: contractABI,
@@ -156,13 +168,7 @@ export default function Main() {
       </div>
     );
   }
-  if (chainId !== arbitrum.id) {
-    return (
-      <div className="flex items-center justify-center h-screen w-full bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8]">
-        <Switch />
-      </div>
-    );
-  }
+
 
   if (context) {
     return (
@@ -176,7 +182,11 @@ export default function Main() {
       >
         <div className="flex flex-col items-center min-h-screen w-full justify-center bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8] px-4">
           <header className="flex-none fixed top-0 left-0 w-full">
-            {context.user.fid === 268438 && <Admin />}
+            {context.user.fid === 268438 && (
+              <div className="text-center text-black">
+                { chainId} <Admin />
+              </div>
+            )}
           </header>
           <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md transform transition-all hover:shadow-2xl">
             <div key={randomIndex} className="text-center animate-fadeIn">
@@ -216,7 +226,9 @@ export default function Main() {
                 : isConfirmed
                 ? "Done!"
                 : canClaim
-                ? (castHash?"Claim":"Share to Claim")
+                ? castHash
+                  ? "Claim"
+                  : "Share to Claim"
                 : "Cooldown Active"}
             </button>
             {/* <MintButton q={randomIndex} /> */}
