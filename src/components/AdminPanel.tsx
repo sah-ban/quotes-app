@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   useAccount,
   useReadContract,
   useWriteContract,
   useWaitForTransactionReceipt,
 } from "wagmi";
-import { parseUnits, formatUnits } from "viem";
-import { Address } from "viem";
+import { parseUnits, formatUnits, Address, parseEther, Hash } from "viem";
 import { contractABI } from "../contracts/abi.js";
 import { arbitrum } from "wagmi/chains";
 
@@ -28,6 +27,10 @@ const Admin: React.FC = () => {
     useWaitForTransactionReceipt({ hash });
 
   const [depositAmount, setDepositAmount] = useState("");
+  const [approveHash, setApproveHash] = useState<Hash | undefined>(undefined);
+  const { isSuccess: isApproved } = useWaitForTransactionReceipt({
+    hash: approveHash,
+  });
   const [newClaimAmount, setNewClaimAmount] = useState("");
 
   const { data: contractBalance } = useReadContract({
@@ -52,34 +55,53 @@ const Admin: React.FC = () => {
     : "";
 
   const handleDeposit = async () => {
-    const amount = parseUnits(depositAmount, 18);
-    await writeContract({
-      address: ARB_TOKEN_ADDRESS,
-      abi: [
-        {
-          name: "approve",
-          type: "function",
-          stateMutability: "nonpayable",
-          inputs: [
-            { name: "spender", type: "address" },
-            { name: "amount", type: "uint256" },
-          ],
-          outputs: [{ type: "bool" }],
+    await writeContract(
+      {
+        address: ARB_TOKEN_ADDRESS,
+        abi: [
+          {
+            name: "approve",
+            type: "function",
+            stateMutability: "nonpayable",
+            inputs: [
+              { name: "spender", type: "address" },
+              { name: "amount", type: "uint256" },
+            ],
+            outputs: [{ type: "bool" }],
+          },
+        ],
+        functionName: "approve",
+        args: [CONTRACT_ADDRESS, parseEther(depositAmount)],
+        chainId: arbitrum.id,
+      },
+      {
+        onSuccess: (hash: Hash) => {
+          setApproveHash(hash);
         },
-      ],
-      functionName: "approve",
-      args: [CONTRACT_ADDRESS, amount],
-      chainId: arbitrum.id,
-    });
-    await writeContract({
-      address: CONTRACT_ADDRESS,
-      abi: contractABI,
-      functionName: "deposit",
-      args: [amount],
-      chainId: arbitrum.id,
-    });
-    setDepositAmount("");
+      }
+    );
   };
+
+  useEffect(() => {
+    if (isApproved && depositAmount) {
+      const deposit = async () => {
+        try {
+          await writeContract({
+            address: CONTRACT_ADDRESS,
+            abi: contractABI,
+            functionName: "deposit",
+            args: [parseEther(depositAmount)],
+            chainId: arbitrum.id,
+          });
+          setDepositAmount("");
+          setApproveHash(undefined);
+        } catch (error) {
+          console.error("Deposit tokens failed:", error);
+        }
+      };
+      deposit();
+    }
+  }, [isApproved, depositAmount, writeContract]);
 
   const handleWithdraw = async () => {
     await writeContract({
@@ -116,7 +138,7 @@ const Admin: React.FC = () => {
         <p>
           Balance:{" "}
           {contractBalance
-            ? `${Number(formatUnits(contractBalance, 18)).toFixed(3)} ARB, for ${Number(formatUnits(contractBalance, 18))/0.025}`
+            ? `${Number(formatUnits(contractBalance, 18)).toFixed(3)} ARB, claims: ${Number(formatUnits(contractBalance, 18))/0.025}`
             : "Loading..."}
         </p>
         <div className="flex flex-row gap-3">
