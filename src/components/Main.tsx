@@ -220,11 +220,11 @@ export default function Main() {
               className="bg-[#F59E0B] hover:bg-[#D97706] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
             >
               {isPending
-                ? "Pending..."
-                : isConfirming
                 ? "Processing..."
+                : isConfirming
+                ? "Claiming..."
                 : isConfirmed
-                ? "Done!"
+                ? "Claimed!"
                 : canClaim
                 ? castHash
                   ? "Claim"
