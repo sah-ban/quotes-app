@@ -4,8 +4,8 @@ import "~/app/globals.css";
 import { Providers } from "~/app/providers";
 
 export const metadata: Metadata = {
-  title: "Farcaster Pro",
-  description: "A mini app to subscribe to Farcaster Pro",
+  title: "Quotes App",
+  description: "A Farcaster Mini App for sharing quotes",
 };
 
 export default async function RootLayout({
