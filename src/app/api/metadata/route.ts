@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({
     name: "Quotes",
     description: "An NFT of Quotes",
-    image: `https://quotes-miniapp.vercel.app/nft?q=${q}`,
+    image: `${process.env.NEXT_PUBLIC_URL}/nft?q=${q}`,
     attributes: [],
   });
 }
