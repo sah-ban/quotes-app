@@ -4,7 +4,6 @@ import quotes from "../../components/quotes.json";
 // Function to fetch font files
 const fetchFont = async (fontName: string) => {
   const fontUrl = `${process.env.NEXT_PUBLIC_URL}/fonts/${fontName}`; 
-  console.log(fontUrl)
   try {
     const response = await fetch(fontUrl);
     if (!response.ok) {
