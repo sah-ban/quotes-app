@@ -3,9 +3,11 @@ export async function GET() {
 
   const config = {
     accountAssociation: {
-      header: "eyJmaWQiOjI2ODQzOCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDIxODA4RUUzMjBlREY2NGMwMTlBNmJiMEY3RTRiRkIzZDYyRjA2RWMifQ",
-      payload: "eyJkb21haW4iOiJxdW90ZXMtbWluaWFwcC52ZXJjZWwuYXBwIn0",
-      signature: "MHg0ZWJhYzRjYTNiN2UwNDNkYTgzMDNlNDk2NzkyNzI2ZDgxZjQwOTkyZGE2ZWJlMmFmNDczYmEzMjhjMmRiZmRjN2M0MDhlMzFkMjUzZWViMzZlYjgzMDcwNTdiMDJhNTcxNzgzMWRjZWU0N2NkM2I4NWNkOGJkYzE2YjYzNzJkNDFj",
+      header:
+        "eyJmaWQiOjI2ODQzOCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDIxODA4RUUzMjBlREY2NGMwMTlBNmJiMEY3RTRiRkIzZDYyRjA2RWMifQ",
+      payload: "eyJkb21haW4iOiJxdW90ZXMuaXRzY2FzaGxlc3MuY29tIn0",
+      signature:
+        "uEP3rjTgLAdHjcn5rgsh+HOC09taQto4Xs5EjcIR6No5aortRJWFRhL6FEgVYNi/4XmFY1heC+F85S4ufWQXSRs=",
     },
     frame: {
       version: "1",
@@ -16,7 +18,7 @@ export async function GET() {
       buttonTitle: "view Quotes",
       splashImageUrl: `${appUrl}/splash.png`,
       splashBackgroundColor: "#FEEBC8",
-      castShareUrl: appUrl,
+      canonicalDomain: "quotes.itscashless.com", 
       webhookUrl: `${appUrl}/api/webhook`,
       subtitle: "Quotes to inspire",
       description:
