@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import sdk, { AddMiniApp, type Context } from "@farcaster/miniapp-sdk";
 import quotes from "./quotes.json";
-// import MintButton from "./MintButton";
+import MintButton from "./MintButton";
 import Admin from "./AdminPanel";
 import Connect from "./Connect";
 import { arbitrum } from "wagmi/chains";
@@ -231,7 +231,7 @@ export default function Main() {
                   : "Share to Claim"
                 : "Cooldown Active"}
             </button>
-            {/* <MintButton q={randomIndex} /> */}
+            <MintButton q={randomIndex} />
           </div>
           <p className="text-black mt-3">
             Last Claimed: {formatTimeElapsed(lastClaimed)}
