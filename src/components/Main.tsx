@@ -13,7 +13,7 @@ import {
   useSwitchChain,
 } from "wagmi";
 import { Address } from "viem";
-import { contractABI } from "../contracts/abi.js";
+import { contractABI } from "../contracts/abi.js"; 
 
 export default function Main() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
