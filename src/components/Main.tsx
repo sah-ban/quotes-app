@@ -167,6 +167,28 @@ export default function Main() {
     }
   }, [isConfirmed]);
 
+  if (!context)
+    return (
+      <div className="flex items-center justify-center h-screen bg-gray-900">
+        <div className="flex flex-col items-center justify-center text-white text-2xl p-4">
+          <p className="flex items-center justify-center text-center">
+            You need to access this mini app from inside a farcaster client
+          </p>
+          <div
+            className="flex items-center justify-center text-center bg-indigo-800 p-3 rounded-lg mt-4 cursor-pointer"
+            onClick={() =>
+              window.open(
+                "https://farcaster.xyz/miniapps/g55PQkYEJNJ5/quotes-app",
+                "_blank"
+              )
+            }
+          >
+            Open in Farcaster
+          </div>
+        </div>
+      </div>
+    );
+
   if (!isConnected) {
     return (
       <div className="flex items-center justify-center h-screen w-full bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8]">
@@ -175,7 +197,6 @@ export default function Main() {
     );
   }
 
-  if (context) {
     return (
       <div
         style={{
@@ -261,4 +282,4 @@ export default function Main() {
       </div>
     );
   }
-}
+
