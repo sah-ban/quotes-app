@@ -18,7 +18,7 @@ import { contractABI } from "../contracts/abi.js";
 export default function Main() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [context, setContext] = useState<Context.MiniAppContext>();
-  const { isConnected,chainId, address } = useAccount();
+  const { isConnected, chainId, address } = useAccount();
   const { switchChainAsync } = useSwitchChain();
 
   const [randomIndex, setRandomIndex] = useState(
@@ -45,7 +45,7 @@ export default function Main() {
   const [castHash, setCastHash] = useState<string | null>(null);
 
   const cast = async (q: number): Promise<string | undefined> => {
-     await switchChainAsync({ chainId: arbitrum.id });
+    await switchChainAsync({ chainId: arbitrum.id });
     try {
       const result = await sdk.actions.composeCast({
         embeds: [`${process.env.NEXT_PUBLIC_URL}?q=${q}`],
@@ -161,6 +161,12 @@ export default function Main() {
     return parts.length > 0 ? parts.join(" ") + " ago" : "Just now";
   };
 
+  useEffect(() => {
+    if (isConfirmed) {
+      sdk.haptics.notificationOccurred("success");
+    }
+  }, [isConfirmed]);
+
   if (!isConnected) {
     return (
       <div className="flex items-center justify-center h-screen w-full bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8]">
@@ -168,7 +174,6 @@ export default function Main() {
       </div>
     );
   }
-
 
   if (context) {
     return (
@@ -184,7 +189,7 @@ export default function Main() {
           <header className="flex-none fixed top-0 left-0 w-full">
             {context.user.fid === 268438 && (
               <div className="text-center text-black">
-                { chainId} <Admin />
+                {chainId} <Admin />
               </div>
             )}
           </header>
@@ -216,7 +221,7 @@ export default function Main() {
           <div className="flex flex-row items-center mt-8 gap-4">
             <button
               onClick={handleClaim}
-              disabled={!canClaim || isPending || isConfirming}
+              disabled={!canClaim || isPending || isConfirming || isConfirmed}
               className="bg-[#F59E0B] hover:bg-[#D97706] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
             >
               {isPending
