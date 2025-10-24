@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
-import sdk, { AddMiniApp, type Context } from "@farcaster/miniapp-sdk";
+import { useState, useEffect } from "react";
+import sdk, { type Context } from "@farcaster/miniapp-sdk";
 import quotes from "./quotes.json";
 import MintButton from "./MintButton";
 import Admin from "./AdminPanel";
@@ -71,27 +71,6 @@ export default function Main() {
     }
     setRandomIndex(newIndex);
   };
-
-  const [addMiniappResult, setAddMiniappResult] = useState("");
-
-  const addMiniapp = useCallback(async () => {
-    try {
-      const result = await sdk.actions.addMiniApp();
-
-      setAddMiniappResult(
-        result.notificationDetails ? `Miniapp Added` : "rejected by user"
-      );
-    } catch (error) {
-      if (error instanceof AddMiniApp.RejectedByUser) {
-        setAddMiniappResult(`${error.message}`);
-      }
-
-      if (error instanceof AddMiniApp.InvalidDomainManifest) {
-        setAddMiniappResult(`${error.message}`);
-      }
-      setAddMiniappResult(`Error: ${error}`);
-    }
-  }, []);
 
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } =
@@ -167,6 +146,12 @@ export default function Main() {
     }
   }, [isConfirmed]);
 
+  useEffect(() => {
+    if (!context?.client.added && isConfirmed) {
+      sdk.actions.addMiniApp();
+    }
+  }, [context?.client.added, isConfirmed]);
+  
   if (!context)
     return (
       <div className="flex items-center justify-center h-screen bg-gray-900">
@@ -268,17 +253,6 @@ export default function Main() {
             </p>
           )}
         </div>
-
-        <footer className="flex-none fixed bottom-0 left-0 w-full p-4 text-center">
-          {!context?.client.added && (
-            <button
-              className="bg-[#7C3AED] text-white px-4 py-2 rounded-lg hover:bg-[#38BDF8] transition cursor-pointer font-semibold w-full mt-2"
-              onClick={addMiniapp}
-            >
-              {addMiniappResult || "Add Miniapp to Farcaster"}
-            </button>
-          )}
-        </footer>
       </div>
     );
   }
