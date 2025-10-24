@@ -7,6 +7,8 @@ import { Address } from "viem";
 import { contractABI } from "../contracts/abi.js";
 import { arbitrum } from "wagmi/chains";
 import { parseEther } from "viem";
+import { useEffect } from "react";
+import sdk from "@farcaster/miniapp-sdk";
 
 const CONTRACT_ADDRESS =
   "0x43E3DC41c5BEe20360dE17003aa08f9aEAcd64bC" as Address;
@@ -38,7 +40,12 @@ const MintButton: React.FC<MintButtonProps> = ({ q }) => {
       chainId: arbitrum.id,
     });
   };
-
+  
+  useEffect(() => {
+    if (isConfirmed) {
+      sdk.haptics.notificationOccurred("success");
+    }
+  }, [isConfirmed]);
 
   return (
     <div className="">
