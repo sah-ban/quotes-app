@@ -225,6 +225,7 @@ export default function Main() {
             </div>
           </div>
           <div className="flex flex-row items-center mt-8 gap-4">
+          {context?.client.clientFid === 9152 &&
             <button
               onClick={handleClaim}
               disabled={!canClaim || isPending || isConfirming || isConfirmed}
@@ -241,12 +242,13 @@ export default function Main() {
                   ? "Claim"
                   : "Share to Claim"
                 : "Cooldown Active"}
-            </button>
+            </button>}
             <MintButton q={randomIndex} />
           </div>
+          {context?.client.clientFid === 9152 &&
           <p className="text-black mt-3">
             Last Claimed: {formatTimeElapsed(lastClaimed)}
-          </p>
+          </p>}
           {isConfirmed && (
             <p className="text-lime-600 mt-3">
               You can Claim again in 12 hours!
