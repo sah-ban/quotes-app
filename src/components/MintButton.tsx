@@ -36,7 +36,7 @@ const MintButton: React.FC<MintButtonProps> = ({ q }) => {
       abi: contractABI,
       functionName: "mint",
       args: [BigInt(q)],
-      value: parseEther("0.00013"),
+      value: parseEther("0.00018"),
       chainId: arbitrum.id,
     });
   };
