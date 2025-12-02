@@ -192,7 +192,7 @@ export default function Main() {
         }}
       >
         <div className="flex flex-col items-center min-h-screen w-full justify-center bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8] px-4">
-          <header className="flex-none fixed top-0 left-0 w-full">
+          <header className="flex-none fixed top-0 left-0 w-full z-50">
             {context.user.fid === 268438 && (
               <div className="text-center text-black">
                 {chainId} <Admin />
