@@ -36,6 +36,14 @@ export async function generateMetadata({
     openGraph: {
       title: "Quotes App",
       description: "Get inspired with random quotes",
+            images: [
+        {
+          url: q ? `${appUrl}/og?q=${q}` : `${appUrl}/og.png`,
+          width: 1200,
+          height: 630,
+          alt: "Quotes",
+        },
+      ],
     },
     other: {
       "fc:frame": JSON.stringify(frame),
