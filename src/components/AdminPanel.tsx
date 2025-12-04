@@ -4,6 +4,7 @@ import {
   useReadContract,
   useWriteContract,
   useWaitForTransactionReceipt,
+  useBalance,
 } from "wagmi";
 import { parseUnits, formatUnits, Address, parseEther, Hash } from "viem";
 import { contractABI } from "../contracts/abi.js";
@@ -124,6 +125,12 @@ const Admin: React.FC = () => {
     setNewClaimAmount("");
   };
 
+  const { data: balance } = useBalance({
+    address,
+    token: ARB_TOKEN_ADDRESS,
+    chainId: arbitrum.id,
+  });
+
   if (!isConnected) {
     return (
       <div className="text-center text-gray-600 p-6">
@@ -136,9 +143,17 @@ const Admin: React.FC = () => {
     <div className="px-6 text-black text-center">
       <div className="bg-white shadow rounded-xl p-4">
         <p>
-          Balance:{" "}
+          Vault Balance:{" "}
+          {contractBalance && balance
+            ? `${Number(formatUnits(contractBalance, 18)).toFixed(
+                2
+              )}, wallet: ${Number(formatUnits(balance?.value, 18)).toFixed(2)}`
+            : "Loading..."}
+        </p>
+        <p>
+          Claims:{" "}
           {contractBalance
-            ? `${Number(formatUnits(contractBalance, 18)).toFixed(3)} ARB, claims: ${Number(formatUnits(contractBalance, 18))/0.025}`
+            ? `${(Number(formatUnits(contractBalance, 18)) / 0.046).toFixed(3)}`
             : "Loading..."}
         </p>
         <div className="flex flex-row gap-3">
