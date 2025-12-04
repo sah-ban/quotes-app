@@ -151,7 +151,7 @@ export default function Main() {
       sdk.actions.addMiniApp();
     }
   }, [context?.client.added, isConfirmed]);
-  
+
   if (!context)
     return (
       <div className="flex items-center justify-center h-screen bg-gray-900">
@@ -182,50 +182,50 @@ export default function Main() {
     );
   }
 
-    return (
-      <div
-        style={{
-          paddingTop: context?.client.safeAreaInsets?.top ?? 0,
-          paddingBottom: context?.client.safeAreaInsets?.bottom ?? 0,
-          paddingLeft: context?.client.safeAreaInsets?.left ?? 0,
-          paddingRight: context?.client.safeAreaInsets?.right ?? 0,
-        }}
-      >
-        <div className="flex flex-col items-center min-h-screen w-full justify-center bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8] px-4">
-          <header className="flex-none fixed top-0 left-0 w-full z-50">
-            {context.user.fid === 268438 && (
-              <div className="text-center text-black">
-                {chainId} <Admin />
-              </div>
-            )}
-          </header>
-          <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md transform transition-all hover:shadow-2xl">
-            <div key={randomIndex} className="text-center animate-fadeIn">
-              <p className="text-xl md:text-2xl font-serif text-gray-800 italic mb-4 leading-relaxed">
-                &ldquo;{quoteText}&rdquo;
-              </p>
-              <p className="text-gray-500 text-lg font-light">
-                {author || "Unknown"}
-              </p>
+  return (
+    <div
+      style={{
+        paddingTop: context?.client.safeAreaInsets?.top ?? 0,
+        paddingBottom: context?.client.safeAreaInsets?.bottom ?? 0,
+        paddingLeft: context?.client.safeAreaInsets?.left ?? 0,
+        paddingRight: context?.client.safeAreaInsets?.right ?? 0,
+      }}
+    >
+      <div className="flex flex-col items-center min-h-screen w-full justify-center bg-gradient-to-br from-[#FFF7ED] to-[#FEEBC8] px-4">
+        <header className="flex-none fixed top-0 left-0 w-full z-50">
+          {context.user.fid === 268438 && (
+            <div className="text-center text-black">
+              {chainId} <Admin />
             </div>
-
-            <div className="flex justify-between items-center mt-8 gap-4">
-              <button
-                className="bg-[#F59E0B] hover:bg-[#D97706] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
-                onClick={handleRandom}
-              >
-                New Quote
-              </button>
-              <button
-                className="bg-[#10B981] hover:bg-[#059669] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
-                onClick={handleCast}
-              >
-                Share
-              </button>
-            </div>
+          )}
+        </header>
+        <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md transform transition-all hover:shadow-2xl">
+          <div key={randomIndex} className="text-center animate-fadeIn">
+            <p className="text-xl md:text-2xl font-serif text-gray-800 italic mb-4 leading-relaxed">
+              &ldquo;{quoteText}&rdquo;
+            </p>
+            <p className="text-gray-500 text-lg font-light">
+              {author || "Unknown"}
+            </p>
           </div>
-          <div className="flex flex-row items-center mt-8 gap-4">
-          {context?.client.clientFid === 9152 &&
+
+          <div className="flex justify-between items-center mt-8 gap-4">
+            <button
+              className="bg-[#F59E0B] hover:bg-[#D97706] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
+              onClick={handleRandom}
+            >
+              New Quote
+            </button>
+            <button
+              className="bg-[#10B981] hover:bg-[#059669] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
+              onClick={handleCast}
+            >
+              Share
+            </button>
+          </div>
+        </div>
+        <div className="flex flex-row items-center mt-8 gap-4">
+          {context?.client.clientFid === 9152 && (
             <button
               onClick={handleClaim}
               disabled={!canClaim || isPending || isConfirming || isConfirmed}
@@ -242,20 +242,31 @@ export default function Main() {
                   ? "Claim"
                   : "Share to Claim"
                 : "Cooldown Active"}
-            </button>}
-            <MintButton q={randomIndex} />
-          </div>
-          {context?.client.clientFid === 9152 &&
+            </button>
+          )}
+          <MintButton q={randomIndex} />
+        </div>
+        {context?.client.clientFid === 9152 && (
           <p className="text-black mt-3">
             Last Claimed: {formatTimeElapsed(lastClaimed)}
-          </p>}
-          {isConfirmed && (
-            <p className="text-lime-600 mt-3">
-              You can Claim again in 12 hours!
-            </p>
-          )}
-        </div>
+          </p>
+        )}
+        {isConfirmed && (
+          <p className="text-lime-600 mt-3">You can Claim again in 12 hours!</p>
+        )}
+        <button
+          onClick={() =>
+            sdk.actions.openUrl(
+              `https://x.com/intent/tweet?text=\n\n&url=${encodeURIComponent(
+                `${process.env.NEXT_PUBLIC_URL}?q=${randomIndex}`
+              )}`
+            )
+          }
+          className="absolute bottom-16 bg-black hover:bg-white text-white hover:text-black py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
+        >
+          Share on 𝕏
+        </button>
       </div>
-    );
-  }
-
+    </div>
+  );
+}
