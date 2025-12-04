@@ -13,7 +13,7 @@ import {
   useSwitchChain,
 } from "wagmi";
 import { Address } from "viem";
-import { contractABI } from "../contracts/abi.js"; 
+import { contractABI } from "../contracts/abi.js";
 
 export default function Main() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
@@ -257,7 +257,7 @@ export default function Main() {
         <button
           onClick={() =>
             sdk.actions.openUrl(
-              `https://x.com/intent/tweet?text=\n\n&url=${encodeURIComponent(
+              `https://x.com/intent/tweet?text=%0A%0A&url=${encodeURIComponent(
                 `${process.env.NEXT_PUBLIC_URL}?q=${randomIndex}`
               )}`
             )
