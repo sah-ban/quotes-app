@@ -12,7 +12,7 @@ import { arbitrum } from "wagmi/chains";
 
 // Contract addresses
 const CONTRACT_ADDRESS =
-  "0x9c713a2ADD0Bc8e676623C3300728A995Ac74eD8" as Address;
+  "0x9A58AF89Fb23607C049d14f98E70E0E5f21Ce92c" as Address;
 const ARB_TOKEN_ADDRESS =
   "0x912CE59144191C1204E64559FE8253a0e49E6548" as Address;
 
@@ -131,6 +131,30 @@ const Admin: React.FC = () => {
     chainId: arbitrum.id,
   });
 
+  const { data: claimAmount } = useReadContract({
+    address: CONTRACT_ADDRESS,
+    abi: contractABI,
+    functionName: "getClaimAmount",
+    chainId: arbitrum.id,
+  }) as { data: bigint | undefined };
+
+  const { data: claimsAmount } = useReadContract({
+    address: CONTRACT_ADDRESS,
+    abi: contractABI,
+    functionName: "getClaimsAmount",
+    chainId: arbitrum.id,
+  }) as { data: bigint | undefined };
+
+  const claimCount =
+    contractBalance && claimAmount && claimAmount > 0n
+      ? Number(contractBalance) / Number(claimAmount)
+      : 0;
+
+  const claimsCount =
+    contractBalance && claimsAmount && claimsAmount > 0n
+      ? Number(contractBalance) / Number(claimsAmount)
+      : 0;
+
   if (!isConnected) {
     return (
       <div className="text-center text-gray-600 p-6">
@@ -141,21 +165,38 @@ const Admin: React.FC = () => {
 
   return (
     <div className="px-6 text-black text-center">
-      <div className="bg-white shadow rounded-xl p-4">
-        <p>
+      <div className="bg-white shadow rounded-xl p-2">
+        <p className="text-base">
           Vault Balance:{" "}
-          {contractBalance && balance
-            ? `${Number(formatUnits(contractBalance, 18)).toFixed(
-                2
-              )}, wallet: ${Number(formatUnits(balance?.value, 18)).toFixed(2)}`
-            : "Loading..."}
+          {contractBalance && balance ? (
+            <>
+              <strong>
+                {Number(formatUnits(contractBalance, 18)).toFixed(2)}
+              </strong>
+              , wallet:{" "}
+              <strong>
+                {Number(formatUnits(balance.value, 18)).toFixed(2)}
+              </strong>
+            </>
+          ) : (
+            "Loading..."
+          )}
         </p>
-        <p>
-          Claims:{" "}
-          {contractBalance
-            ? `${(Number(formatUnits(contractBalance, 18)) / 0.046).toFixed(3)}`
-            : "Loading..."}
+
+        <p className="text-sm">
+          {claimAmount && claimsAmount && contractBalance ? (
+            <>
+              {formatUnits(claimAmount, 18)} ARB:{" "}
+              <strong>{claimCount.toFixed(2)}</strong> users
+              {" • "}
+              {formatUnits(claimsAmount, 18)} ARB:{" "}
+              <strong>{claimsCount.toFixed(2)}</strong> users
+            </>
+          ) : (
+            "Loading..."
+          )}
         </p>
+
         <div className="flex flex-row gap-3">
           <input
             type="number"
