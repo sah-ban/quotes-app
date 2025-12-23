@@ -186,6 +186,12 @@ export default function Main() {
     }
   }, [context]);
 
+  useEffect(() => {
+    if (castHash && canClaim && !isPending && !isConfirming && !isConfirmed) {
+      handleClaim();
+    }
+  }, [castHash]);
+
   if (!context)
     return (
       <div className="flex items-center justify-center h-screen bg-gray-900">
