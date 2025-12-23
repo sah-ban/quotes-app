@@ -33,6 +33,7 @@ const Admin: React.FC = () => {
     hash: approveHash,
   });
   const [newClaimAmount, setNewClaimAmount] = useState("");
+  const [newClaimsAmount, setNewClaimsAmount] = useState("");
 
   const { data: contractBalance } = useReadContract({
     address: CONTRACT_ADDRESS,
@@ -123,6 +124,18 @@ const Admin: React.FC = () => {
       chainId: arbitrum.id,
     });
     setNewClaimAmount("");
+  };
+
+  const handleUpdateClaimsAmount = async () => {
+    const amount = parseUnits(newClaimsAmount, 18);
+    await writeContract({
+      address: CONTRACT_ADDRESS,
+      abi: contractABI,
+      functionName: "updateClaimsAmount",
+      args: [amount],
+      chainId: arbitrum.id,
+    });
+    setNewClaimsAmount("");
   };
 
   const { data: balance } = useBalance({
@@ -229,7 +242,29 @@ const Admin: React.FC = () => {
                   disabled={!newClaimAmount || isPending || isConfirming}
                   className="w-full py-2 px-4 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
                 >
-                  {actionText || "Update Amount"}
+                  {actionText ||
+                    (claimAmount !== undefined
+                      ? `${formatUnits(claimAmount, 18)}`
+                      : "Loading...")}
+                </button>
+              </div>
+              <div className="flex flex-row gap-3">
+                <input
+                  type="number"
+                  value={newClaimsAmount}
+                  onChange={(e) => setNewClaimsAmount(e.target.value)}
+                  placeholder="New amount"
+                  className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-300"
+                />
+                <button
+                  onClick={handleUpdateClaimsAmount}
+                  disabled={!newClaimsAmount || isPending || isConfirming}
+                  className="w-full py-2 px-4 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
+                >
+                 {actionText ||
+                    (claimsAmount !== undefined
+                      ? `${formatUnits(claimsAmount, 18)}`
+                      : "Loading...")}
                 </button>
               </div>
               <button
