@@ -69,7 +69,18 @@ export default function Main() {
     while (newIndex === randomIndex && quotes.length > 1) {
       newIndex = Math.floor(Math.random() * quotes.length);
     }
+    sdk.haptics.impactOccurred("light");
     setRandomIndex(newIndex);
+  };
+  const [followersCount, setFollowersCount] = useState(0);
+  const fcount = async (fid: number) => {
+    try {
+      const res = await fetch(`/api/fcount?fid=${fid}`);
+      const data = await res.json();
+      setFollowersCount(data.followers);
+    } catch (err) {
+      console.error("Error fetching followers count:", err);
+    }
   };
 
   const { writeContract, data: hash, isPending } = useWriteContract();
@@ -77,7 +88,7 @@ export default function Main() {
     useWaitForTransactionReceipt({ hash });
 
   const CONTRACT_ADDRESS =
-    "0x9c713a2ADD0Bc8e676623C3300728A995Ac74eD8" as Address;
+    "0x9A58AF89Fb23607C049d14f98E70E0E5f21Ce92c" as Address;
 
   const { data: lastClaimed } = useReadContract({
     address: CONTRACT_ADDRESS,
@@ -90,7 +101,7 @@ export default function Main() {
   const handleClaim = async () => {
     if (!castHash) {
       handleCast();
-    } else {
+    } else if (followersCount >= 400) {
       if (chainId !== arbitrum.id) {
         try {
           await switchChainAsync({ chainId: arbitrum.id });
@@ -105,6 +116,23 @@ export default function Main() {
         address: CONTRACT_ADDRESS,
         abi: contractABI,
         functionName: "claim",
+        chainId: arbitrum.id,
+      });
+    } else {
+      if (chainId !== arbitrum.id) {
+        try {
+          await switchChainAsync({ chainId: arbitrum.id });
+        } catch (switchError) {
+          console.error("Failed to switch chain:", switchError);
+          throw new Error(
+            `Please manually switch to ${arbitrum.name} in your wallet.`
+          );
+        }
+      }
+      await writeContract({
+        address: CONTRACT_ADDRESS,
+        abi: contractABI,
+        functionName: "claims",
         chainId: arbitrum.id,
       });
     }
@@ -151,6 +179,12 @@ export default function Main() {
       sdk.actions.addMiniApp();
     }
   }, [context?.client.added, isConfirmed]);
+
+  useEffect(() => {
+    if (context) {
+      fcount(context?.user.fid);
+    }
+  }, [context]);
 
   if (!context)
     return (
