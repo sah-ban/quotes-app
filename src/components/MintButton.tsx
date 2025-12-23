@@ -4,7 +4,7 @@ import {
   useWaitForTransactionReceipt,
 } from "wagmi";
 import { Address } from "viem";
-import { contractABI } from "../contracts/abi.js";
+import { mintABI } from "../contracts/mintAbi.js";
 import { arbitrum } from "wagmi/chains";
 import { parseEther } from "viem";
 import { useEffect } from "react";
@@ -33,7 +33,7 @@ const MintButton: React.FC<MintButtonProps> = ({ q }) => {
   const handleMintNFT = async () => {
     await writeContract({
       address: CONTRACT_ADDRESS,
-      abi: contractABI,
+      abi: mintABI,
       functionName: "mint",
       args: [BigInt(q)],
       value: parseEther("0.00018"),
