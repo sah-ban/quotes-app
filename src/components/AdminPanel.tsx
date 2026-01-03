@@ -8,13 +8,12 @@ import {
 } from "wagmi";
 import { parseUnits, formatUnits, Address, parseEther, Hash } from "viem";
 import { contractABI } from "../contracts/abi.js";
-import { arbitrum } from "wagmi/chains";
+import { base } from "wagmi/chains";
 
 // Contract addresses
 const CONTRACT_ADDRESS =
-  "0x9A58AF89Fb23607C049d14f98E70E0E5f21Ce92c" as Address;
-const ARB_TOKEN_ADDRESS =
-  "0x912CE59144191C1204E64559FE8253a0e49E6548" as Address;
+  "0x16781984a554a03b411c763e2B0a50430F8Ef009" as Address;
+const TOKEN_ADDRESS = "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed" as Address;
 
 const Admin: React.FC = () => {
   const { address, isConnected } = useAccount();
@@ -39,7 +38,7 @@ const Admin: React.FC = () => {
     address: CONTRACT_ADDRESS,
     abi: contractABI,
     functionName: "getContractBalance",
-    chainId: arbitrum.id,
+    chainId: base.id,
   }) as { data: bigint | undefined };
 
   const isOwner =
@@ -59,7 +58,7 @@ const Admin: React.FC = () => {
   const handleDeposit = async () => {
     await writeContract(
       {
-        address: ARB_TOKEN_ADDRESS,
+        address: TOKEN_ADDRESS,
         abi: [
           {
             name: "approve",
@@ -74,7 +73,7 @@ const Admin: React.FC = () => {
         ],
         functionName: "approve",
         args: [CONTRACT_ADDRESS, parseEther(depositAmount)],
-        chainId: arbitrum.id,
+        chainId: base.id,
       },
       {
         onSuccess: (hash: Hash) => {
@@ -93,7 +92,7 @@ const Admin: React.FC = () => {
             abi: contractABI,
             functionName: "deposit",
             args: [parseEther(depositAmount)],
-            chainId: arbitrum.id,
+            chainId: base.id,
           });
           setDepositAmount("");
           setApproveHash(undefined);
@@ -110,7 +109,7 @@ const Admin: React.FC = () => {
       address: CONTRACT_ADDRESS,
       abi: contractABI,
       functionName: "withdrawAll",
-      chainId: arbitrum.id,
+      chainId: base.id,
     });
   };
 
@@ -121,7 +120,7 @@ const Admin: React.FC = () => {
       abi: contractABI,
       functionName: "updateClaimAmount",
       args: [amount],
-      chainId: arbitrum.id,
+      chainId: base.id,
     });
     setNewClaimAmount("");
   };
@@ -133,29 +132,29 @@ const Admin: React.FC = () => {
       abi: contractABI,
       functionName: "updateClaimsAmount",
       args: [amount],
-      chainId: arbitrum.id,
+      chainId: base.id,
     });
     setNewClaimsAmount("");
   };
 
   const { data: balance } = useBalance({
     address,
-    token: ARB_TOKEN_ADDRESS,
-    chainId: arbitrum.id,
+    token: TOKEN_ADDRESS,
+    chainId: base.id,
   });
 
   const { data: claimAmount } = useReadContract({
     address: CONTRACT_ADDRESS,
     abi: contractABI,
     functionName: "getClaimAmount",
-    chainId: arbitrum.id,
+    chainId: base.id,
   }) as { data: bigint | undefined };
 
   const { data: claimsAmount } = useReadContract({
     address: CONTRACT_ADDRESS,
     abi: contractABI,
     functionName: "getClaimsAmount",
-    chainId: arbitrum.id,
+    chainId: base.id,
   }) as { data: bigint | undefined };
 
   const claimCount =
@@ -199,10 +198,10 @@ const Admin: React.FC = () => {
         <p className="text-sm">
           {claimAmount && claimsAmount && contractBalance ? (
             <>
-              {formatUnits(claimAmount, 18)} ARB:{" "}
+              {formatUnits(claimAmount, 18)} DEGEN:{" "}
               <strong>{claimCount.toFixed(2)}</strong> users
               {" • "}
-              {formatUnits(claimsAmount, 18)} ARB:{" "}
+              {formatUnits(claimsAmount, 18)} DEGEN:{" "}
               <strong>{claimsCount.toFixed(2)}</strong> users
             </>
           ) : (
@@ -215,7 +214,7 @@ const Admin: React.FC = () => {
             type="number"
             value={depositAmount}
             onChange={(e) => setDepositAmount(e.target.value)}
-            placeholder="ARB"
+            placeholder="DEGEN"
             className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-300"
           />
           <button
@@ -261,7 +260,7 @@ const Admin: React.FC = () => {
                   disabled={!newClaimsAmount || isPending || isConfirming}
                   className="w-full py-2 px-4 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
                 >
-                 {actionText ||
+                  {actionText ||
                     (claimsAmount !== undefined
                       ? `${formatUnits(claimsAmount, 18)}`
                       : "Loading...")}

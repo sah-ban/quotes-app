@@ -1,12 +1,12 @@
 import { createConfig, http, WagmiProvider } from "wagmi";
-import { arbitrum } from "wagmi/chains";
+import { base } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { farcasterMiniApp } from "@farcaster/miniapp-wagmi-connector";
 
 export const config = createConfig({
-  chains: [arbitrum],
+  chains: [base],
   transports: {
-    [arbitrum.id]: http(),
+    [base.id]: http(),
   },
   connectors: [farcasterMiniApp()],
 });

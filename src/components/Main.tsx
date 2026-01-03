@@ -4,13 +4,12 @@ import quotes from "./quotes.json";
 import MintButton from "./MintButton";
 import Admin from "./AdminPanel";
 import Connect from "./Connect";
-import { arbitrum } from "wagmi/chains";
+import { base } from "wagmi/chains";
 import {
   useAccount,
   useReadContract,
   useWriteContract,
   useWaitForTransactionReceipt,
-  useSwitchChain,
 } from "wagmi";
 import { Address } from "viem";
 import { contractABI } from "../contracts/abi.js";
@@ -19,7 +18,6 @@ export default function Main() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [context, setContext] = useState<Context.MiniAppContext>();
   const { isConnected, chainId, address } = useAccount();
-  const { switchChainAsync } = useSwitchChain();
 
   const [randomIndex, setRandomIndex] = useState(
     Math.floor(Math.random() * quotes.length)
@@ -45,7 +43,6 @@ export default function Main() {
   const [castHash, setCastHash] = useState<string | null>(null);
 
   const cast = async (q: number): Promise<string | undefined> => {
-    await switchChainAsync({ chainId: arbitrum.id });
     try {
       const result = await sdk.actions.composeCast({
         embeds: [`${process.env.NEXT_PUBLIC_URL}?q=${q}`],
@@ -88,52 +85,32 @@ export default function Main() {
     useWaitForTransactionReceipt({ hash });
 
   const CONTRACT_ADDRESS =
-    "0x9A58AF89Fb23607C049d14f98E70E0E5f21Ce92c" as Address;
+    "0x16781984a554a03b411c763e2B0a50430F8Ef009" as Address;
 
   const { data: lastClaimed } = useReadContract({
     address: CONTRACT_ADDRESS,
     abi: contractABI,
     functionName: "getLastClaimed",
     args: address ? [address] : undefined,
-    chainId: arbitrum.id,
+    chainId: base.id,
   }) as { data: number | undefined };
 
   const handleClaim = async () => {
     if (!castHash) {
       handleCast();
     } else if (followersCount >= 400) {
-      if (chainId !== arbitrum.id) {
-        try {
-          await switchChainAsync({ chainId: arbitrum.id });
-        } catch (switchError) {
-          console.error("Failed to switch chain:", switchError);
-          throw new Error(
-            `Please manually switch to ${arbitrum.name} in your wallet.`
-          );
-        }
-      }
       await writeContract({
         address: CONTRACT_ADDRESS,
         abi: contractABI,
         functionName: "claim",
-        chainId: arbitrum.id,
+        chainId: base.id,
       });
     } else {
-      if (chainId !== arbitrum.id) {
-        try {
-          await switchChainAsync({ chainId: arbitrum.id });
-        } catch (switchError) {
-          console.error("Failed to switch chain:", switchError);
-          throw new Error(
-            `Please manually switch to ${arbitrum.name} in your wallet.`
-          );
-        }
-      }
       await writeContract({
         address: CONTRACT_ADDRESS,
         abi: contractABI,
         functionName: "claims",
-        chainId: arbitrum.id,
+        chainId: base.id,
       });
     }
   };
