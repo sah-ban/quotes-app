@@ -13,6 +13,7 @@ import {
 } from "wagmi";
 import { Address } from "viem";
 import { contractABI } from "../contracts/abi.js";
+import { blocked } from "./blocked";
 
 export default function Main() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
@@ -168,6 +169,12 @@ export default function Main() {
       handleClaim();
     }
   }, [castHash]);
+
+  useEffect(() => {
+    if (blocked.includes(context?.user.fid || 0)) {
+      sdk.actions.close();
+    }
+  }, [context?.user.fid]);
 
   if (!context)
     return (
