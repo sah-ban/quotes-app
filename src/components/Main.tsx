@@ -104,6 +104,39 @@ export default function Main() {
 
   const [signature, setSignature] = useState<string | undefined>(undefined);
   const [amount, setAmount] = useState<bigint | undefined>(undefined);
+  const [secondsLeft, setSecondsLeft] = useState<number>(0);
+  const [targetEndTime, setTargetEndTime] = useState<number | null>(null);
+
+  // Set target end time when cooldownRemaining is loaded
+  useEffect(() => {
+    if (cooldownRemaining !== undefined) {
+      const remaining = Number(cooldownRemaining);
+      const target = Math.floor(Date.now() / 1000) + remaining;
+
+      // Only update if it's a significant change (more than 5s difference)
+      // to avoid jumping on every RPC refetch
+      if (!targetEndTime || Math.abs(target - targetEndTime) > 5) {
+        setTargetEndTime(target);
+        setSecondsLeft(remaining);
+      }
+    }
+  }, [cooldownRemaining, targetEndTime]);
+
+  // Smooth local countdown
+  useEffect(() => {
+    if (!targetEndTime) return;
+
+    const updateTimer = () => {
+      const now = Math.floor(Date.now() / 1000);
+      const remaining = Math.max(0, targetEndTime - now);
+      setSecondsLeft(remaining);
+    };
+
+    const interval = setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call
+
+    return () => clearInterval(interval);
+  }, [targetEndTime]);
 
   // Pre-fetch signature when dependencies change
   useEffect(() => {
@@ -204,7 +237,7 @@ export default function Main() {
     if (days > 0) parts.push(`${days}d`);
     if (hours > 0) parts.push(`${hours}h`);
     if (minutes > 0) parts.push(`${minutes}m`);
-    if (secs > 0 && parts.length === 0) parts.push(`${secs}s`);
+    if (secs > 0) parts.push(`${secs}s`);
 
     return parts.length > 0 ? parts.join(" ") : "Ready!";
   };
@@ -332,9 +365,7 @@ export default function Main() {
         {context?.client.clientFid === 9152 && (
           <p className="text-black mt-3">
             Next Claim:{" "}
-            {cooldownRemaining !== undefined
-              ? formatTimeRemaining(cooldownRemaining)
-              : "—"}
+            {secondsLeft > 0 ? formatTimeRemaining(secondsLeft) : "Ready!"}
           </p>
         )}
         {isConfirmed && (
