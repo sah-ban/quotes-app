@@ -88,8 +88,6 @@ export async function POST(req: NextRequest) {
     const response = await axios.get(apiUrl);
     const followers = response.data?.result?.user?.followerCount || 0;
 
-    console.log(`FID ${fid} has ${followers} followers`);
-
     // Assign token amount based on follower count
     if (followers >= 500) {
       tokenAmount = 5;
