@@ -4,7 +4,6 @@ import quotes from "./quotes.json";
 import MintButton from "./MintButton";
 import Admin from "./AdminPanel";
 import Connect from "./Connect";
-import { base } from "wagmi/chains";
 import {
   useAccount,
   useReadContract,
@@ -70,99 +69,159 @@ export default function Main() {
     sdk.haptics.impactOccurred("light");
     setRandomIndex(newIndex);
   };
-  const [followersCount, setFollowersCount] = useState(0);
-  const fcount = async (fid: number) => {
-    try {
-      const res = await fetch(`/api/fcount?fid=${fid}`);
-      const data = await res.json();
-      setFollowersCount(data.followers);
-    } catch (err) {
-      console.error("Error fetching followers count:", err);
-    }
-  };
 
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } =
     useWaitForTransactionReceipt({ hash });
 
   const CONTRACT_ADDRESS =
-    "0x16781984a554a03b411c763e2B0a50430F8Ef009" as Address;
+    "0xf594d97EE2b6a3B51a8EF97Cfce4AAE04418B70C" as Address;
 
-  const { data: lastClaimed } = useReadContract({
+  const { data: nonce, refetch: refetchNonce } = useReadContract({
     address: CONTRACT_ADDRESS,
     abi: contractABI,
-    functionName: "getLastClaimed",
-    args: address ? [address] : undefined,
-    chainId: base.id,
-  }) as { data: number | undefined };
+    functionName: "fidNonces",
+    args: [context?.user.fid],
+    query: { enabled: !!context?.user.fid },
+  }) as { data: bigint | undefined; refetch: () => void };
+
+  const { data: cooldownRemaining, refetch: refetchCooldown } = useReadContract(
+    {
+      address: CONTRACT_ADDRESS,
+      abi: contractABI,
+      functionName: "getCooldownRemaining",
+      args: [context?.user.fid],
+      query: { enabled: !!context?.user.fid },
+    }
+  ) as { data: bigint | undefined; refetch: () => void };
+
+  const { data: cooldownHours } = useReadContract({
+    address: CONTRACT_ADDRESS,
+    abi: contractABI,
+    functionName: "cooldownHours",
+    query: { enabled: true },
+  }) as { data: bigint | undefined };
+
+  const [signature, setSignature] = useState<string | undefined>(undefined);
+  const [amount, setAmount] = useState<bigint | undefined>(undefined);
+
+  // Pre-fetch signature when dependencies change
+  useEffect(() => {
+    const fetchSignature = async () => {
+      if (!context?.user.fid || !address || nonce === undefined) return;
+
+      try {
+        const { token } = await sdk.quickAuth.getToken();
+        const currentNonce = nonce.toString();
+
+        const res = await fetch("/api/auth", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            address: address,
+            nonce: currentNonce,
+          }),
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          setSignature(data.signature);
+          setAmount(BigInt(data.amount));
+        }
+      } catch (e) {
+        console.error("Pre-fetch signature failed", e);
+      }
+    };
+
+    fetchSignature();
+  }, [context?.user.fid]);
 
   const handleClaim = async () => {
     if (!castHash) {
       handleCast();
-    } else if (followersCount >= 400) {
-      await writeContract({
-        address: CONTRACT_ADDRESS,
-        abi: contractABI,
-        functionName: "claim",
-        chainId: base.id,
-      });
     } else {
-      await writeContract({
-        address: CONTRACT_ADDRESS,
-        abi: contractABI,
-        functionName: "claims",
-        chainId: base.id,
-      });
+      if (!context?.user.fid || !address) return;
+
+      let finalSignature = signature;
+      let finalAmount = amount;
+
+      if (!finalSignature || !finalAmount) {
+        try {
+          const { token } = await sdk.quickAuth.getToken();
+          const currentNonce = nonce ? nonce.toString() : "0";
+          const res = await fetch("/api/auth", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ address, nonce: currentNonce }),
+          });
+          if (!res.ok) throw new Error("Failed to fetch signature");
+          const data = await res.json();
+          finalSignature = data.signature;
+          finalAmount = BigInt(data.amount);
+        } catch (error) {
+          console.error(error);
+          alert("Failed to prepare transaction");
+          return;
+        }
+      }
+
+      try {
+        await writeContract({
+          address: CONTRACT_ADDRESS,
+          abi: contractABI,
+          functionName: "claim",
+          args: [BigInt(context.user.fid), finalAmount, finalSignature],
+        });
+      } catch (error) {
+        console.error("Claim failed:", error);
+        alert(
+          "Failed to claim: " +
+            (error instanceof Error ? error.message : "Unknown error")
+        );
+      }
     }
   };
 
-  const canClaim = lastClaimed
-    ? Date.now() / 1000 >= Number(lastClaimed) + 12 * 60 * 60
-    : true;
+  const canClaim =
+    cooldownRemaining !== undefined ? cooldownRemaining === BigInt(0) : true;
 
-  const formatTimeElapsed = (timestamp: string | number | undefined) => {
-    if (!timestamp || timestamp === "never") return "Never";
+  const formatTimeRemaining = (secondsRemaining: bigint | number) => {
+    const seconds = Number(secondsRemaining);
+    if (seconds <= 0) return "Ready!";
 
-    const numTimestamp = parseInt(timestamp.toString(), 10);
-    if (isNaN(numTimestamp) || numTimestamp <= 0) return "Never";
-
-    const now = Math.floor(Date.now() / 1000);
-    const secondsElapsed = now - numTimestamp;
-
-    if (secondsElapsed <= 0) return "Just now";
-
-    const days = Math.floor(secondsElapsed / (24 * 60 * 60));
-    const hours = Math.floor((secondsElapsed % (24 * 60 * 60)) / (60 * 60));
-    const minutes = Math.floor((secondsElapsed % (60 * 60)) / 60);
-    const seconds = secondsElapsed % 60;
+    const days = Math.floor(seconds / (24 * 60 * 60));
+    const hours = Math.floor((seconds % (24 * 60 * 60)) / (60 * 60));
+    const minutes = Math.floor((seconds % (60 * 60)) / 60);
+    const secs = seconds % 60;
 
     const parts: string[] = [];
     if (days > 0) parts.push(`${days}d`);
     if (hours > 0) parts.push(`${hours}h`);
     if (minutes > 0) parts.push(`${minutes}m`);
-    if (seconds > 0 && parts.length === 0)
-      parts.push(`${seconds} sec${seconds !== 1 ? "s" : ""}`);
+    if (secs > 0 && parts.length === 0) parts.push(`${secs}s`);
 
-    return parts.length > 0 ? parts.join(" ") + " ago" : "Just now";
+    return parts.length > 0 ? parts.join(" ") : "Ready!";
   };
 
   useEffect(() => {
     if (isConfirmed) {
       sdk.haptics.notificationOccurred("success");
+      refetchNonce();
+      refetchCooldown();
     }
-  }, [isConfirmed]);
+  }, [isConfirmed, refetchNonce, refetchCooldown]);
 
   useEffect(() => {
     if (!context?.client.added && isConfirmed) {
       sdk.actions.addMiniApp();
     }
   }, [context?.client.added, isConfirmed]);
-
-  useEffect(() => {
-    if (context) {
-      fcount(context?.user.fid);
-    }
-  }, [context]);
 
   useEffect(() => {
     if (castHash && canClaim && !isPending && !isConfirming && !isConfirmed) {
@@ -272,24 +331,18 @@ export default function Main() {
         </div>
         {context?.client.clientFid === 9152 && (
           <p className="text-black mt-3">
-            Last Claimed: {formatTimeElapsed(lastClaimed)}
+            Next Claim:{" "}
+            {cooldownRemaining !== undefined
+              ? formatTimeRemaining(cooldownRemaining)
+              : "—"}
           </p>
         )}
         {isConfirmed && (
-          <p className="text-lime-600 mt-3">You can Claim again in 12 hours!</p>
+          <p className="text-lime-600 mt-3">
+            You can Claim again in {cooldownHours ? Number(cooldownHours) : 12}{" "}
+            hours!
+          </p>
         )}
-        <button
-          onClick={() =>
-            sdk.actions.openUrl(
-              `https://x.com/intent/tweet?text=%0A%0A&url=${encodeURIComponent(
-                `${process.env.NEXT_PUBLIC_URL}?q=${randomIndex}`
-              )}`
-            )
-          }
-          className="absolute bottom-16 bg-black hover:bg-white text-white hover:text-black py-2 rounded-lg transition-all duration-300 font-semibold w-[150px] shadow-md hover:shadow-lg"
-        >
-          Share on 𝕏
-        </button>
       </div>
     </div>
   );
