@@ -6,13 +6,13 @@ import {
   useWaitForTransactionReceipt,
   useBalance,
 } from "wagmi";
-import { parseUnits, formatUnits, Address, parseEther, Hash } from "viem";
+import { formatUnits, Address, parseEther, Hash } from "viem";
 import { contractABI } from "../contracts/abi.js";
 import { base } from "wagmi/chains";
 
 // Contract addresses
 const CONTRACT_ADDRESS =
-  "0x16781984a554a03b411c763e2B0a50430F8Ef009" as Address;
+  "0xf594d97EE2b6a3B51a8EF97Cfce4AAE04418B70C" as Address;
 const TOKEN_ADDRESS = "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed" as Address;
 
 const Admin: React.FC = () => {
@@ -31,13 +31,11 @@ const Admin: React.FC = () => {
   const { isSuccess: isApproved } = useWaitForTransactionReceipt({
     hash: approveHash,
   });
-  const [newClaimAmount, setNewClaimAmount] = useState("");
-  const [newClaimsAmount, setNewClaimsAmount] = useState("");
 
   const { data: contractBalance } = useReadContract({
     address: CONTRACT_ADDRESS,
     abi: contractABI,
-    functionName: "getContractBalance",
+    functionName: "getContractTokenBalance",
     chainId: base.id,
   }) as { data: bigint | undefined };
 
@@ -90,7 +88,7 @@ const Admin: React.FC = () => {
           await writeContract({
             address: CONTRACT_ADDRESS,
             abi: contractABI,
-            functionName: "deposit",
+            functionName: "depositTokens",
             args: [parseEther(depositAmount)],
             chainId: base.id,
           });
@@ -113,59 +111,11 @@ const Admin: React.FC = () => {
     });
   };
 
-  const handleUpdateClaimAmount = async () => {
-    const amount = parseUnits(newClaimAmount, 18);
-    await writeContract({
-      address: CONTRACT_ADDRESS,
-      abi: contractABI,
-      functionName: "updateClaimAmount",
-      args: [amount],
-      chainId: base.id,
-    });
-    setNewClaimAmount("");
-  };
-
-  const handleUpdateClaimsAmount = async () => {
-    const amount = parseUnits(newClaimsAmount, 18);
-    await writeContract({
-      address: CONTRACT_ADDRESS,
-      abi: contractABI,
-      functionName: "updateClaimsAmount",
-      args: [amount],
-      chainId: base.id,
-    });
-    setNewClaimsAmount("");
-  };
-
   const { data: balance } = useBalance({
     address,
     token: TOKEN_ADDRESS,
     chainId: base.id,
   });
-
-  const { data: claimAmount } = useReadContract({
-    address: CONTRACT_ADDRESS,
-    abi: contractABI,
-    functionName: "getClaimAmount",
-    chainId: base.id,
-  }) as { data: bigint | undefined };
-
-  const { data: claimsAmount } = useReadContract({
-    address: CONTRACT_ADDRESS,
-    abi: contractABI,
-    functionName: "getClaimsAmount",
-    chainId: base.id,
-  }) as { data: bigint | undefined };
-
-  const claimCount =
-    contractBalance && claimAmount && claimAmount > 0n
-      ? Number(contractBalance) / Number(claimAmount)
-      : 0;
-
-  const claimsCount =
-    contractBalance && claimsAmount && claimsAmount > 0n
-      ? Number(contractBalance) / Number(claimsAmount)
-      : 0;
 
   if (!isConnected) {
     return (
@@ -179,7 +129,7 @@ const Admin: React.FC = () => {
     <div className="px-6 text-black text-center">
       <div className="bg-white shadow rounded-xl p-2">
         <p className="text-base">
-          Vault Balance:{" "}
+          Vault :{" "}
           {contractBalance && balance ? (
             <>
               <strong>
@@ -189,20 +139,6 @@ const Admin: React.FC = () => {
               <strong>
                 {Number(formatUnits(balance.value, 18)).toFixed(2)}
               </strong>
-            </>
-          ) : (
-            "Loading..."
-          )}
-        </p>
-
-        <p className="text-sm">
-          {claimAmount && claimsAmount && contractBalance ? (
-            <>
-              {formatUnits(claimAmount, 18)} DEGEN:{" "}
-              <strong>{claimCount.toFixed(2)}</strong> users
-              {" • "}
-              {formatUnits(claimsAmount, 18)} DEGEN:{" "}
-              <strong>{claimsCount.toFixed(2)}</strong> users
             </>
           ) : (
             "Loading..."
@@ -228,44 +164,6 @@ const Admin: React.FC = () => {
         {isOwner && (
           <div className="mt-3">
             <div className="space-y-2 mt-3">
-              <div className="flex flex-row gap-3">
-                <input
-                  type="number"
-                  value={newClaimAmount}
-                  onChange={(e) => setNewClaimAmount(e.target.value)}
-                  placeholder="New amount"
-                  className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-300"
-                />
-                <button
-                  onClick={handleUpdateClaimAmount}
-                  disabled={!newClaimAmount || isPending || isConfirming}
-                  className="w-full py-2 px-4 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
-                >
-                  {actionText ||
-                    (claimAmount !== undefined
-                      ? `${formatUnits(claimAmount, 18)}`
-                      : "Loading...")}
-                </button>
-              </div>
-              <div className="flex flex-row gap-3">
-                <input
-                  type="number"
-                  value={newClaimsAmount}
-                  onChange={(e) => setNewClaimsAmount(e.target.value)}
-                  placeholder="New amount"
-                  className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-300"
-                />
-                <button
-                  onClick={handleUpdateClaimsAmount}
-                  disabled={!newClaimsAmount || isPending || isConfirming}
-                  className="w-full py-2 px-4 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
-                >
-                  {actionText ||
-                    (claimsAmount !== undefined
-                      ? `${formatUnits(claimsAmount, 18)}`
-                      : "Loading...")}
-                </button>
-              </div>
               <button
                 onClick={handleWithdraw}
                 disabled={isPending || isConfirming}
