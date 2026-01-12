@@ -89,10 +89,26 @@ export async function POST(req: NextRequest) {
     const followers = response.data?.result?.user?.followerCount || 0;
 
     // Assign token amount based on follower count
-    if (followers >= 500) {
+    if (followers >= 1000) {
+      tokenAmount = 10;
+    } else if (followers >= 900) {
+      tokenAmount = 9;
+    } else if (followers >= 800) {
+      tokenAmount = 8;
+    } else if (followers >= 700) {
+      tokenAmount = 7;
+    } else if (followers >= 600) {
+      tokenAmount = 6;
+    } else if (followers >= 500) {
       tokenAmount = 5;
-    } else if (followers >= 100) {
+    } else if (followers >= 400) {
+      tokenAmount = 4;
+    } else if (followers >= 300) {
       tokenAmount = 3;
+    } else if (followers >= 200) {
+      tokenAmount = 2;
+    } else if (followers >= 100) {
+      tokenAmount = 1;
     } else {
       tokenAmount = 1;
     }
