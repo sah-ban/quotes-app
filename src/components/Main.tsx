@@ -45,6 +45,7 @@ export default function Main() {
   const cast = async (q: number): Promise<string | undefined> => {
     try {
       const result = await sdk.actions.composeCast({
+        text: "Share Quotes, claim $DEGEN",
         embeds: [`${process.env.NEXT_PUBLIC_URL}?q=${q}`],
       });
 
