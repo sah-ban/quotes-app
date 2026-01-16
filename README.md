@@ -1,134 +1,125 @@
-# Quotes – A Farcaster Mini App for Sharing and Discovering Quotes
+# Quotes
 
-This is a **Mini App** built for [**Farcaster**](https://farcaster.xyz), a decentralized social media protocol, designed to let users share, discover, and save their favorite quotes.
+A Farcaster Mini App for sharing inspirational quotes and earning rewards.
 
+## ✨ Features
 
-
-![og](public/og.png)
+- **Discover Quotes** – Browse a collection of inspirational quotes with a single tap.
+- **Share to Farcaster** – Cast your favorite quotes directly to your Farcaster feed.
+- **Claim Token Rewards** – Share a quote and claim token rewards (Warpcast only). A 12-hour cooldown applies between claims.
+- **Mint as NFT** – Mint any quote as an on-chain NFT on Base for 0.00018 ETH.
 
 ## 🛠️ Tech Stack
 
-- [Next.js](https://nextjs.org/)
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-
+- **Framework**: [Next.js 15](https://nextjs.org/) + [React 19](https://reactjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Blockchain**: [wagmi](https://wagmi.sh/) + [viem](https://viem.sh/) on Base
+- **Farcaster**: [@farcaster/miniapp-sdk](https://docs.farcaster.xyz/)
 
 ## 📦 Getting Started
-
-Follow these steps to set up the project locally:
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/sah-ban/quotes-app
-cd quotes
+git clone https://github.com/sah-ban/quotes-app.git
+cd quotes-app
 ```
 
 ### 2. Install Dependencies
 
 ```bash
-yarn
+yarn install
 ```
 
 ### 3. Configure Environment Variables
 
-- Rename the example environment file:
-
 ```bash
-mv example.env .env
+cp .env.example .env
 ```
 
-- Generate a secure secret for `NEXTAUTH_SECRET`:
+Edit `.env` with your values:
 
-```bash
-node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-```
+| Variable             | Description                               |
+| -------------------- | ----------------------------------------- |
+| `NEXT_PUBLIC_URL`    | Your deployed app URL                     |
+| `KV_REST_API_URL`    | Upstash Redis REST API URL                |
+| `KV_REST_API_TOKEN`  | Upstash Redis REST API token              |
+| `KEY`                | Secret key for protecting API routes      |
+| `NEYNAR_API_KEY`     | Neynar API key for webhook verification   |
+| `CONTRACT_ADDRESS`   | Deployed Quotes claim contract address    |
+| `SIGNER_PRIVATE_KEY` | Private key of the contract signer wallet |
 
-- Replace the placeholder in `.env` with the generated value.
-
----
-
-## 💻 Run the Development Server
+````
+### 4. Run Development Server
 
 ```bash
 yarn dev
-```
+````
 
-The app will be available at `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
----
+## 🌐 Preview with Cloudflare tunnel
 
-## 🌐 Preview Locally with Ngrok
-
-To test your app on Farcaster:
-
-1. Start an ngrok tunnel:
+To test on a Farcaster client:
 
 ```bash
-ngrok http 3000
+1 cloudflared tunnel run yourapp
 ```
 
-2. Copy the provided ngrok URL and open it in the [Farcaster Developer Tools](https://farcaster.xyz/~/developers/mini-apps/preview).
+Use the tunnel URL in the [Farcaster Developer Tools](https://farcaster.xyz/~/developers/mini-apps/preview).
+
+## 📜 Smart Contracts
+
+| Contract       | Address                                      | Chain |
+| -------------- | -------------------------------------------- | ----- |
+| Quotes (Claim) | `0xf594d97EE2b6a3B51a8EF97Cfce4AAE04418B70C` | Base  |
+| Mint           | `0xb775FC32E4dE4B845A0284152EA76e8b7c46D9f4` | Base  |
+
+## 🔌 API Routes
+
+### `POST /api/auth`
+
+Generates an EIP-712 signature for claiming rewards.
+
+- **Authentication**: Requires Farcaster Quick Auth JWT in `Authorization: Bearer <token>` header.
+- **Body**: `{ address: string, nonce: string }`
+- **Response**: `{ signature, fid, nonce, amount, signer }`
+- **Logic**: Token reward amount (1–10) is determined by the user's Farcaster follower count.
+
+### `POST /api/webhook`
+
+Handles Farcaster miniapp lifecycle events.
+
+- **Events**:
+  - `miniapp_added` – Stores notification token in Redis and sends a welcome notification.
+  - `miniapp_removed` – Deletes notification token.
+  - `notifications_enabled` – Stores token and sends confirmation.
+  - `notifications_disabled` – Deletes token.
+- **Verification**: Uses Neynar to verify app key signatures.
+
+### `POST /api/send-notifications`
+
+Broadcasts notifications to all subscribed users.
+
+- **Query**: `?key=<your-KEY-env-var>` for authorization.
+- **Body**: `{ title: string, body: string, targetUrl: string }`
+- **Response**: `{ message: string, rateLimitedTokens: string[] }`
+
+## 📁 Project Structure
+
+```
+src/
+├── app/           # Next.js pages & API routes
+├── components/    # React components (Main, MintButton, Connect, AdminPanel)
+├── contracts/     # Solidity contracts & ABIs
+└── lib/           # Utilities (kv, notifs)
+```
+
+## 📄 License
+
+MIT
 
 ---
 
-## 🧩 Customize the Mini App
-
-Edit the main logic and UI in the following file:
-
-```tsx
-./src/components/Main.tsx
-```
-
----
-
-## 🚀 Deploying the App
-
-### 1. Deploy to [Vercel](https://vercel.com/)
-
-- Create a new project by importing your GitHub repository.
-- During setup, add the following environment variable:
-
-```
-Key: NEXTAUTH_SECRET
-Value: <your-generated-secret>
-```
-
-- Click **Deploy**.
-
-### 2. Post-Deployment Steps
-
-- Go to your Vercel **Dashboard** and copy the live deployment URL.
-- Navigate to **Settings > Environment Variables**, and add the remaining variables from your `.env` file.
-- Save and redeploy if needed.
-
----
-
-## 🔗 Link Your Farcaster Account
-
-### 1. Register Your Domain
-
-- Go to [Farcaster Developer Tools](https://farcaster.xyz/~/developers/mini-apps).
-- Paste your Vercel deployment domain.
-- Untick **Include Example Definition**.
-- Copy the generated **Domain Manifest** (automatically copied to clipboard).
-
-### 2. Update the Domain Manifest in the Project
-
-- Open the following file:
-
-```tsx
-./src/app/.well-known/farcaster.json/route.ts
-```
-
-- Replace the `accountAssociation` object with the one from the manifest.
-- Commit and push your changes to deploy them.
-
----
-
-## ✅ You're All Set!
-
-Your Quotes Mini App is now ready to go live 🚀
-
-For questions, feel free to reach out or open an issue in the [GitHub repo](https://github.com/sah-ban/quotes-app/issues).
+Built by [@cashlessman.eth](https://farcaster.xyz/cashlessman.eth)
