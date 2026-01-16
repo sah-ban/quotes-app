@@ -64,7 +64,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 To test on a Farcaster client:
 
 ```bash
-1 cloudflared tunnel run yourapp
+cloudflared tunnel run yourapp
 ```
 
 Use the tunnel URL in the [Farcaster Developer Tools](https://farcaster.xyz/~/developers/mini-apps/preview).
