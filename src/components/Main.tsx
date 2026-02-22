@@ -75,7 +75,7 @@ export default function Main() {
     useWaitForTransactionReceipt({ hash });
 
   const CONTRACT_ADDRESS =
-    "0xf594d97EE2b6a3B51a8EF97Cfce4AAE04418B70C" as Address;
+    "0xF161379Ad4900407C289b3033c7EA1AfB99F8926" as Address;
 
   const { data: nonce, refetch: refetchNonce } = useReadContract({
     address: CONTRACT_ADDRESS,

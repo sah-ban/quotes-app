@@ -2,13 +2,13 @@ import React from "react";
 import { useWriteContract, useWaitForTransactionReceipt } from "wagmi";
 import { Address } from "viem";
 import { mintABI } from "../contracts/mintAbi.js";
-import { base } from "wagmi/chains";
+import { arbitrum } from "wagmi/chains";
 import { parseEther } from "viem";
 import { useEffect } from "react";
 import sdk from "@farcaster/miniapp-sdk";
 
 const CONTRACT_ADDRESS =
-  "0xb775FC32E4dE4B845A0284152EA76e8b7c46D9f4" as Address;
+  "0x43E3DC41c5BEe20360dE17003aa08f9aEAcd64bC" as Address;
 
 interface MintButtonProps {
   q: number | string;
@@ -29,7 +29,7 @@ const MintButton: React.FC<MintButtonProps> = ({ q }) => {
       functionName: "mint",
       args: [BigInt(q)],
       value: parseEther("0.00018"),
-      chainId: base.id,
+      chainId: arbitrum.id,
     });
   };
 
@@ -49,10 +49,10 @@ const MintButton: React.FC<MintButtonProps> = ({ q }) => {
         {isPending
           ? "Processing..."
           : isConfirming
-          ? "Minting..."
-          : isConfirmed
-          ? "Minted!"
-          : "Mint Quote"}
+            ? "Minting..."
+            : isConfirmed
+              ? "Minted!"
+              : "Mint Quote"}
       </button>
     </div>
   );

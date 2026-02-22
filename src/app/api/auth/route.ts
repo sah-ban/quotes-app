@@ -1,24 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient, Errors } from "@farcaster/quick-auth";
-import { defineChain } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { blocked } from "../../../components/blocked";
-import axios from "axios";
+// import axios from "axios";
 
 const quickAuth = createClient();
 
-const baseChain = defineChain({
-  id: 8453,
-  name: "Base",
-  nativeCurrency: {
-    decimals: 18,
-    name: "Ether",
-    symbol: "ETH",
-  },
-  rpcUrls: {
-    default: { http: ["https://mainnet.base.org"] },
-  },
-});
 
 const PRIVATE_KEY = process.env.SIGNER_PRIVATE_KEY as `0x${string}`;
 const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS as `0x${string}`;
@@ -81,42 +68,42 @@ export async function POST(req: NextRequest) {
 
   // Fetch follower count and assign token amount
 
-  let tokenAmount = 1; // Default amount in whole tokens
+  const tokenAmount = 0.11; // Default amount in whole tokens
 
-  try {
-    const apiUrl = `https://api.farcaster.xyz/v2/user?fid=${fid}`;
-    const response = await axios.get(apiUrl);
-    const followers = response.data?.result?.user?.followerCount || 0;
+  // try {
+  //   const apiUrl = `https://api.farcaster.xyz/v2/user?fid=${fid}`;
+  //   const response = await axios.get(apiUrl);
+  //   const followers = response.data?.result?.user?.followerCount || 0;
 
-    // Assign token amount based on follower count
-    if (followers >= 1000) {
-      tokenAmount = 10;
-    } else if (followers >= 900) {
-      tokenAmount = 9;
-    } else if (followers >= 800) {
-      tokenAmount = 8;
-    } else if (followers >= 700) {
-      tokenAmount = 7;
-    } else if (followers >= 600) {
-      tokenAmount = 6;
-    } else if (followers >= 500) {
-      tokenAmount = 5;
-    } else if (followers >= 400) {
-      tokenAmount = 4;
-    } else if (followers >= 300) {
-      tokenAmount = 3;
-    } else if (followers >= 200) {
-      tokenAmount = 2;
-    } else if (followers >= 100) {
-      tokenAmount = 1;
-    } else {
-      tokenAmount = 1;
-    }
-  } catch (error) {
-    console.error("Error fetching follower count:", error);
-    // Default to 1 token if API call fails
-    tokenAmount = 1;
-  }
+  //   // Assign token amount based on follower count
+  //   if (followers >= 1000) {
+  //     tokenAmount = 1;
+  //   } else if (followers >= 900) {
+  //     tokenAmount = 9;
+  //   } else if (followers >= 800) {
+  //     tokenAmount = 8;
+  //   } else if (followers >= 700) {
+  //     tokenAmount = 7;
+  //   } else if (followers >= 600) {
+  //     tokenAmount = 6;
+  //   } else if (followers >= 500) {
+  //     tokenAmount = 5;
+  //   } else if (followers >= 400) {
+  //     tokenAmount = 4;
+  //   } else if (followers >= 300) {
+  //     tokenAmount = 3;
+  //   } else if (followers >= 200) {
+  //     tokenAmount = 2;
+  //   } else if (followers >= 100) {
+  //     tokenAmount = 1;
+  //   } else {
+  //     tokenAmount = 1;
+  //   }
+  // } catch (error) {
+  //   console.error("Error fetching follower count:", error);
+  //   // Default to 1 token if API call fails
+  //   tokenAmount = 1;
+  // }
 
   // Convert to wei (18 decimals): amount * 10^18
   const amount = tokenAmount * 10 ** 18;
@@ -138,7 +125,7 @@ export async function POST(req: NextRequest) {
   const domain = {
     name: "Quotes",
     version: "1",
-    chainId: baseChain.id,
+    chainId: 42161,
     verifyingContract: CONTRACT_ADDRESS,
   } as const;
 

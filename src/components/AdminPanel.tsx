@@ -8,12 +8,12 @@ import {
 } from "wagmi";
 import { formatUnits, Address, parseEther, Hash } from "viem";
 import { contractABI } from "../contracts/abi.js";
-import { base } from "wagmi/chains";
+import { arbitrum } from "wagmi/chains";
 
 // Contract addresses
 const CONTRACT_ADDRESS =
-  "0xf594d97EE2b6a3B51a8EF97Cfce4AAE04418B70C" as Address;
-const TOKEN_ADDRESS = "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed" as Address;
+  "0xF161379Ad4900407C289b3033c7EA1AfB99F8926" as Address;
+const TOKEN_ADDRESS = "0x912CE59144191C1204E64559FE8253a0e49E6548" as Address;
 
 const Admin: React.FC = () => {
   const { address, isConnected } = useAccount();
@@ -36,7 +36,7 @@ const Admin: React.FC = () => {
     address: CONTRACT_ADDRESS,
     abi: contractABI,
     functionName: "getContractTokenBalance",
-    chainId: base.id,
+    chainId: arbitrum.id,
   }) as { data: bigint | undefined };
 
   const isOwner =
@@ -71,7 +71,7 @@ const Admin: React.FC = () => {
         ],
         functionName: "approve",
         args: [CONTRACT_ADDRESS, parseEther(depositAmount)],
-        chainId: base.id,
+        chainId: arbitrum.id,
       },
       {
         onSuccess: (hash: Hash) => {
@@ -90,7 +90,7 @@ const Admin: React.FC = () => {
             abi: contractABI,
             functionName: "depositTokens",
             args: [parseEther(depositAmount)],
-            chainId: base.id,
+            chainId: arbitrum.id,
           });
           setDepositAmount("");
           setApproveHash(undefined);
@@ -107,14 +107,14 @@ const Admin: React.FC = () => {
       address: CONTRACT_ADDRESS,
       abi: contractABI,
       functionName: "withdrawAll",
-      chainId: base.id,
+      chainId: arbitrum.id,
     });
   };
 
   const { data: balance } = useBalance({
     address,
     token: TOKEN_ADDRESS,
-    chainId: base.id,
+    chainId: arbitrum.id,
   });
 
   if (!isConnected) {
@@ -150,7 +150,7 @@ const Admin: React.FC = () => {
             type="number"
             value={depositAmount}
             onChange={(e) => setDepositAmount(e.target.value)}
-            placeholder="DEGEN"
+            placeholder="ARB"
             className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-300"
           />
           <button
