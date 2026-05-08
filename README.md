@@ -6,7 +6,6 @@ A Farcaster Mini App for sharing inspirational quotes and earning rewards.
 
 - **Discover Quotes** – Browse a collection of inspirational quotes with a single tap.
 - **Share to Farcaster** – Cast your favorite quotes directly to your Farcaster feed.
-- **Claim Token Rewards** – Share a quote and claim token rewards (Warpcast only). A 12-hour cooldown applies between claims.
 - **Mint as NFT** – Mint any quote as an on-chain NFT on Base for 0.00018 ETH.
 
 ## 🛠️ Tech Stack
@@ -47,8 +46,6 @@ Edit `.env` with your values:
 | `KV_REST_API_TOKEN`  | Upstash Redis REST API token              |
 | `KEY`                | Secret key for protecting API routes      |
 | `NEYNAR_API_KEY`     | Neynar API key for webhook verification   |
-| `CONTRACT_ADDRESS`   | Deployed Quotes claim contract address    |
-| `SIGNER_PRIVATE_KEY` | Private key of the contract signer wallet |
 
 ````
 ### 4. Run Development Server
@@ -71,21 +68,11 @@ Use the tunnel URL in the [Farcaster Developer Tools](https://farcaster.xyz/~/de
 
 ## 📜 Smart Contracts
 
-| Contract       | Address                                      | Chain |
-| -------------- | -------------------------------------------- | ----- |
-| Quotes (Claim) | `0xf594d97EE2b6a3B51a8EF97Cfce4AAE04418B70C` | Base  |
-| Mint           | `0xb775FC32E4dE4B845A0284152EA76e8b7c46D9f4` | Base  |
+| Contract | Address                                      | Chain |
+| -------- | -------------------------------------------- | ----- |
+| Mint     | `0xb775FC32E4dE4B845A0284152EA76e8b7c46D9f4` | Base  |
 
 ## 🔌 API Routes
-
-### `POST /api/auth`
-
-Generates an EIP-712 signature for claiming rewards.
-
-- **Authentication**: Requires Farcaster Quick Auth JWT in `Authorization: Bearer <token>` header.
-- **Body**: `{ address: string, nonce: string }`
-- **Response**: `{ signature, fid, nonce, amount, signer }`
-- **Logic**: Token reward amount (1–10) is determined by the user's Farcaster follower count.
 
 ### `POST /api/webhook`
 
