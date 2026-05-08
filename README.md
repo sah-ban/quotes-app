@@ -1,6 +1,6 @@
 # Quotes
 
-A Farcaster Mini App for sharing inspirational quotes and earning rewards.
+A Farcaster Mini App for sharing inspirational quotes and minting them as NFTs.
 
 ## ✨ Features
 
@@ -98,7 +98,7 @@ Broadcasts notifications to all subscribed users.
 ```
 src/
 ├── app/           # Next.js pages & API routes
-├── components/    # React components (Main, MintButton, Connect, AdminPanel)
+├── components/    # React components (Main, MintButton, Connect)
 ├── contracts/     # Solidity contracts & ABIs
 └── lib/           # Utilities (kv, notifs)
 ```
