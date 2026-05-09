@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useWriteContract, useWaitForTransactionReceipt } from "wagmi";
+import {
+  useChainId,
+  useSwitchChain,
+  useWriteContract,
+  useWaitForTransactionReceipt,
+} from "wagmi";
 import { Address, parseEther } from "viem";
 import { mintABI } from "../contracts/mintAbi.js";
 import { base, arbitrum } from "wagmi/chains";
@@ -17,21 +22,30 @@ interface MintButtonProps {
 const MintButton: React.FC<MintButtonProps> = ({ q }) => {
   const [selectedChainId, setSelectedChainId] = useState<number>(base.id);
 
+  const currentChainId = useChainId();
+  const { switchChainAsync, isPending: isSwitching } = useSwitchChain();
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } =
     useWaitForTransactionReceipt({ hash });
 
-  const busy = isPending || isConfirming;
+  const busy = isPending || isConfirming || isSwitching;
 
   const handleMintNFT = async () => {
-    await writeContract({
-      address: CONTRACTS[selectedChainId],
-      abi: mintABI,
-      functionName: "mint",
-      args: [BigInt(q)],
-      value: parseEther("0.00018"),
-      chainId: selectedChainId,
-    });
+    try {
+      if (currentChainId !== selectedChainId) {
+        await switchChainAsync({ chainId: selectedChainId });
+      }
+      await writeContract({
+        address: CONTRACTS[selectedChainId],
+        abi: mintABI,
+        functionName: "mint",
+        args: [BigInt(q)],
+        value: parseEther("0.00018"),
+        chainId: selectedChainId,
+      });
+    } catch (error) {
+      console.error("Mint failed:", error);
+    }
   };
 
   useEffect(() => {
@@ -72,13 +86,15 @@ const MintButton: React.FC<MintButtonProps> = ({ q }) => {
         disabled={busy}
         className="bg-[#10B981] hover:bg-[#059669] text-white py-2 rounded-lg transition-all duration-300 font-semibold w-full shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isPending
-          ? "Processing..."
-          : isConfirming
-            ? "Minting..."
-            : isConfirmed
-              ? "Minted!"
-              : "Mint Quote"}
+        {isSwitching
+          ? "Switching..."
+          : isPending
+            ? "Processing..."
+            : isConfirming
+              ? "Minting..."
+              : isConfirmed
+                ? "Minted!"
+                : "Mint Quote"}
       </button>
     </div>
   );
