@@ -68,9 +68,10 @@ Use the tunnel URL in the [Farcaster Developer Tools](https://farcaster.xyz/~/de
 
 ## 📜 Smart Contracts
 
-| Contract | Address                                      | Chain |
-| -------- | -------------------------------------------- | ----- |
-| Mint     | `0xb775FC32E4dE4B845A0284152EA76e8b7c46D9f4` | Base  |
+| Contract | Address                                      | Chain     |
+| -------- | -------------------------------------------- | --------- |
+| Mint     | `0xb775FC32E4dE4B845A0284152EA76e8b7c46D9f4` | Base      |
+| Mint     | `0x43E3DC41c5BEe20360dE17003aa08f9aEAcd64bC` | Arbitrum  |
 
 ## 🔌 API Routes
 
