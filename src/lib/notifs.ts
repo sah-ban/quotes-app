@@ -49,7 +49,7 @@ export async function sendFrameNotification({
     const responseBody = sendNotificationResponseSchema.safeParse(responseJson);
     if (responseBody.success === false) {
       // Malformed response
-      return { state: "error", error: responseBody.error.errors };
+      return { state: "error", error: responseBody.error.issues };
     }
 
     if (responseBody.data.result.rateLimitedTokens.length) {

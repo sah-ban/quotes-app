@@ -1,10 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --radius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,19 +28,14 @@ body {
 }
 
 * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 *::-webkit-scrollbar {
   display: none;
 }
 
-@layer base {
-  :root {
-    --radius: 0.5rem;
-  }
-}
 @keyframes fadeIn {
   from {
     opacity: 0;
